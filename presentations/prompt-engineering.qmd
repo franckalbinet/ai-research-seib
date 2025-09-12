@@ -1,0 +1,590 @@
+---
+title: "Scientific Paper Summary and Extraction"
+subtitle: "Systematic AI-Assisted Literature Review - Sessions 1 & 2"
+format:
+  clean-revealjs:
+    self-contained: true
+author:
+  - name: Franck Albinet
+    email: franckalbinet@gmail.com
+    affiliation: "Independent Data Science & AI Consultant"
+date: last-modified
+bibliography: refs.bib
+execute:
+  eval: false
+footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
+---
+
+# Session 1: Foundations and Basic Prompting {background-color="#40666e"}
+
+## Why Paper Summary & Extraction?
+
+### Building the Foundation for Literature Review
+
+**Our focus today:** Scientific paper summary and extraction
+
+- **Abstract, key takeaways, figures, and tables described**
+- Systematic representation of papers for our specific goals
+- **Crucial preparation step** for later synthesis and literature review writing
+
+:::{.fragment}
+[Key insight:]{.alert} This allows us to craft the right context we want to provide to AI for literature review synthesis
+:::
+
+## Why This Matters
+
+### Addressing Common Pain Points
+
+From researcher feedback, common challenges include:
+
+- **Consistency:** Difficulty reviewing papers systematically over time
+- **Relevance screening:** Hard to maintain focus on research questions
+- **Context preparation:** Unclear what information to extract for later synthesis
+- **Scale:** Manual review doesn't scale to comprehensive literature reviews
+
+:::{.fragment}
+**Today's goal:** Build a systematic, AI-assisted approach to paper processing
+:::
+
+# The Three Gulfs Model {background-color="#40666e"}
+
+## Understanding AI Pipeline Challenges
+
+### The Three Gulfs Framework
+
+![Three Gulfs Model - showing Developer, LLM Pipeline, and Data with the gulfs between them](img/three-gulfs-model.png)
+
+The core framework for understanding LLM development challenges, showing the different hats developers must wear when building effective pipelines. [^3]
+
+## Gulf 1: Comprehension
+
+### You ↔ Your Data
+
+**The challenge:** Understanding your input data (scientific papers) and how your AI pipeline behaves on that data at scale.
+
+:::{.fragment}
+**In literature review context:**
+
+- You can't manually read every paper or examine every AI-generated summary
+- Hard to understand patterns, failure modes, or data characteristics across hundreds of documents
+- Different paper types (experimental, theoretical, clinical) may behave differently
+:::
+
+:::{.fragment}
+[Critical insight:]{.alert} We need systematic ways to understand our data and AI performance at scale
+:::
+
+## Gulf 2: Specification
+
+### You ↔ AI Pipeline
+
+**The challenge:** The gap between what you want the AI to do and what you actually communicate in your prompts.
+
+:::{.fragment}
+**Example:** "Summarize the key findings" leaves many questions unanswered:
+
+- Should summaries be bullets or paragraphs?
+- How detailed should methodology descriptions be?
+- Should figures and tables be described separately?
+- What constitutes a "key finding" versus supporting detail?
+:::
+
+:::{.fragment}
+[Key point:]{.alert} Seemingly clear instructions often contain hidden ambiguities
+:::
+
+## Gulf 3: Generalization
+
+### Your Data ↔ AI Pipeline
+
+**The challenge:** Even with perfect prompts, AI may behave inconsistently across different inputs.
+
+:::{.fragment}
+**In scientific literature:**
+
+- A prompt working well for experimental biology papers might fail on theoretical physics
+- Clinical studies vs. laboratory research may require different approaches
+- Older papers vs. recent publications may have different structures
+:::
+
+:::{.fragment}
+[Important:]{.alert} Each application requires bridging the Three Gulfs anew - there are no universal solutions
+:::
+
+## Why This Framework Matters
+
+### Guiding Our Approach
+
+Understanding the Three Gulfs helps us:
+
+1. **Expect iteration** - Perfect prompts don't exist from the start
+2. **Plan for evaluation** - We need systematic ways to assess performance
+3. **Design for diversity** - Our approach must work across different paper types
+4. **Stay methodical** - Each gulf requires specific strategies to bridge
+
+:::{.fragment}
+**Today's structure:** We'll address each gulf systematically through hands-on practice
+:::
+
+# Hands-On Practice: Basic Prompting {background-color="#40666e"}
+
+## Before We Start
+
+### Preparation Check
+
+**Do you have:**
+
+- 2-3 scientific papers from your domain that you know well?
+- Access to an AI tool (ChatGPT, Claude, Copilot, etc.)?
+- A way to take notes during our exercises?
+
+:::{.fragment}
+**Why papers you know well?** You'll be able to evaluate AI output quality and catch errors more easily.
+:::
+
+:::{.fragment}
+**Tool choice:** We'll be tool-agnostic - methodology matters more than specific platforms
+:::
+
+## Exercise 1: Basic Paper Summary
+
+### Starting Simple
+
+**Your first prompt:** Try this with one of your papers:
+
+> "Please summarize this scientific paper."
+
+**Time:** 10 minutes
+
+:::{.fragment}
+**While you work:**
+
+- Paste the full paper text (or as much as fits)
+- Note what the AI produces
+- **Start open coding:** Jot down what you observe - both good and problematic
+:::
+
+## Reflection: What Did You Notice?
+
+### Open Coding Introduction
+
+**Open coding concept:** Like "casting a fishing net" - capture whatever comes up without predefined categories.
+
+**From social science and LLM evaluation methodology:**
+
+- Avoid a priori bias about failure modes
+- Let the data (AI outputs) speak for themselves
+- Collect observations first, categorize later
+
+:::{.fragment}
+**Share with the group:** What did you observe in your AI summaries?
+:::
+
+## Common Observations
+
+### What We Typically See
+
+Based on the group's observations, common patterns include:
+
+- **Length variation:** Some summaries too brief, others too detailed
+- **Missing elements:** Figures, tables, methodology details often omitted
+- **Inconsistent focus:** What constitutes "key findings" varies
+- **Format differences:** Paragraphs vs. bullets, structure varies
+
+:::{.fragment}
+[This illustrates:]{.alert} Gulf of Specification - our simple prompt left too much undefined
+:::
+
+# Improving Our Prompts {background-color="#40666e"}
+
+## Prompting Fundamentals
+
+### The Building Blocks
+
+A well-structured prompt includes:
+
+1. **Role and Objective** - Define the AI's persona and goal
+2. **Instructions/Response Rules** - Clear, specific directives
+3. **Context** - The relevant background information
+4. **Examples** - Few-shot prompting for guidance
+5. **Reasoning Steps** - Chain-of-thought prompting
+6. **Output Formatting** - Structure and constraints
+7. **Delimiters** - Clear organization of prompt sections
+
+## Exercise 2: Adding Role and Objective
+
+### Improving Specification
+
+**Enhanced prompt:** Try this version:
+
+> **Role:** You are a scientific literature extraction specialist with expertise in [your domain] research.
+> 
+> **Objective:** Generate a comprehensive, structured summary of the provided scientific paper optimized for literature review preparation.
+> 
+> [Your paper text here]
+
+**Time:** 10-15 minutes
+
+:::{.fragment}
+**Continue open coding:** Note changes compared to Exercise 1
+:::
+
+## Exercise 3: Adding Structure
+
+### Output Formatting Constraints
+
+**Further enhanced prompt:**
+
+> **Role:** You are a scientific literature extraction specialist...
+> 
+> **Objective:** Generate a comprehensive, structured summary...
+> 
+> **Format required:**
+> - Title and citation information
+> - Abstract (original)
+> - Key takeaways by section (bullet points)
+> - Figures and tables described
+> 
+> [Your paper text here]
+
+**Time:** 10-15 minutes
+
+## Reflection Round 2
+
+### Comparing Iterations
+
+**Group discussion:**
+
+- How did adding role/objective change the output?
+- What improved with structured formatting requirements?
+- What issues persist?
+- **New observations** to add to your open coding notes?
+
+:::{.fragment}
+[Pattern emerging:]{.alert} More specific prompts → more consistent outputs, but new challenges may appear
+:::
+
+# Advanced Prompting Techniques {background-color="#40666e"}
+
+## Exercise 4: Complete Specification
+
+### The Full Treatment
+
+Use the comprehensive prompt from your materials:
+
+- **Detailed role definition**
+- **Specific output requirements**
+- **Content priorities (high/medium/exclude)**
+- **Cross-referencing requirements**
+- **Quality standards**
+- **Error handling instructions**
+
+**Time:** 15-20 minutes
+
+:::{.fragment}
+**Focus:** How does comprehensive specification affect consistency and quality?
+:::
+
+## The Temptation to Delegate
+
+### A Critical Warning
+
+**It's very tempting** to ask an LLM to write prompts for us upfront.
+
+:::{.fragment}
+**Why we iterate manually first:**
+
+- **Forces thinking:** Clarifies what we actually want to achieve
+- **Reveals assumptions:** Uncovers hidden requirements
+- **Builds understanding:** Helps us recognize failure modes
+- **Maintains control:** Keeps us in the driver's seat
+:::
+
+:::{.fragment}
+[Later:]{.alert} We can use AI to refine prompts, but start with human-led iteration
+:::
+
+## Automated Prompt Optimization
+
+### Tools and Hybrid Approaches
+
+**Available tools:**
+
+- **DSPy:** Automated prompt optimization
+- **Various prompt generators:** AI-assisted prompt creation
+- **A/B testing platforms:** Systematic prompt comparison
+
+:::{.fragment}
+**Best practice:** Use these tools in hybrid setups after you understand your requirements
+
+- Start with manual iteration
+- Use tools to refine and optimize
+- Maintain oversight and evaluation
+:::
+
+# Session 1 Wrap-Up {background-color="#40666e"}
+
+## What We've Learned
+
+### Key Insights from Session 1
+
+1. **The Three Gulfs** provide a framework for understanding AI challenges
+2. **Iterative prompting** is essential - start simple, add complexity
+3. **Open coding** helps us identify patterns without bias
+4. **Specification matters** - detailed prompts produce more consistent results
+5. **Human-led iteration** beats delegation to AI tools initially
+
+:::{.fragment}
+**For tomorrow:** We'll dive deeper into evaluation methodology and systematic failure analysis
+:::
+
+## Homework Reflection
+
+### Before Session 2
+
+**Try the complete prompt** with 2-3 different papers:
+
+- Continue your open coding observations
+- Note which types of papers work better/worse
+- Identify any remaining inconsistencies
+- **Question to ponder:** What would "good enough" look like for your use case?
+
+---
+
+# Session 2: Evaluation and Systematic Improvement {background-color="#40666e"}
+
+## Welcome Back
+
+### Bridging the Gulfs Systematically
+
+**Session 1 recap:** We started addressing the Gulf of Specification through iterative prompting.
+
+**Today's focus:**
+
+- **Gulf of Comprehension:** Understanding our data and AI performance at scale
+- **Gulf of Generalization:** Ensuring consistency across different paper types
+- **Systematic evaluation methodology**
+
+## Your Observations
+
+### Homework Debrief
+
+**Share with the group:**
+
+- How did the complete prompt perform across different papers?
+- What new patterns did you notice?
+- Which paper types seemed more challenging?
+- Any surprises in the AI outputs?
+
+:::{.fragment}
+**Add to your open coding notes** - we'll use these observations for systematic analysis
+:::
+
+# Systematic Evaluation Methodology {background-color="#40666e"}
+
+## From Open to Axial Coding
+
+### Moving from Observation to Analysis
+
+**Open coding** (what we've been doing): Collecting observations without predefined categories
+
+**Axial coding** (today's focus): Organizing observations into meaningful patterns and categories
+
+:::{.fragment}
+**The process:**
+
+1. Collect all open coding observations
+2. Group similar observations together
+3. Identify core failure modes and success patterns
+4. Develop systematic evaluation criteria
+:::
+
+## Exercise 5: Collective Axial Coding
+
+### Identifying Failure Modes
+
+**Group activity:**
+
+1. **Share observations:** Everyone contributes their open coding notes
+2. **Group similar issues:** Cluster related observations
+3. **Name patterns:** What are the main categories of problems?
+4. **Prioritize:** Which failure modes matter most for literature review?
+
+**Time:** 20-25 minutes
+
+:::{.fragment}
+**Tool:** We'll use a collaborative form/board to organize our findings
+:::
+
+## Common Failure Mode Categories
+
+### What We Typically Find
+
+Based on collective analysis, common categories include:
+
+**Content Issues:**
+- Missing key information (methodology, results, figures)
+- Inconsistent level of detail across papers
+- Misinterpretation of complex concepts
+
+**Structural Problems:**
+- Inconsistent formatting despite clear instructions
+- Poor cross-referencing between sections and figures
+- Variable summary lengths
+
+**Domain-Specific Challenges:**
+- Technical terminology handling
+- Different paper structures across subfields
+
+## LLM as a Judge
+
+### Systematic Evaluation Approach
+
+**Concept:** Use AI to evaluate AI outputs systematically
+
+**Why this works:**
+
+- **Scalability:** Can evaluate many outputs quickly
+- **Consistency:** Same criteria applied to all evaluations
+- **Objectivity:** Reduces human bias in assessment
+
+:::{.fragment}
+**Caution:** Still requires human oversight and validation of evaluation criteria
+:::
+
+## Exercise 6: Creating Evaluation Criteria
+
+### Building Our Judge
+
+**Based on our axial coding results:**
+
+1. **Define quality dimensions:** What makes a good paper summary?
+2. **Create specific criteria:** How do we measure each dimension?
+3. **Develop evaluation prompts:** How do we instruct the AI judge?
+4. **Test the system:** Apply to your paper summaries
+
+**Time:** 25-30 minutes
+
+## Example Evaluation Dimensions
+
+### Quality Framework
+
+**Completeness:**
+- All major sections summarized
+- Figures and tables described
+- Key quantitative results included
+
+**Accuracy:**
+- No factual errors or misrepresentations
+- Proper technical terminology usage
+- Correct interpretation of results
+
+**Consistency:**
+- Uniform formatting across papers
+- Consistent level of detail
+- Reliable cross-referencing
+
+**Relevance:**
+- Focus on research-relevant content
+- Appropriate level of methodological detail
+
+# Iterative Improvement Process {background-color="#40666e"}
+
+## The Improvement Cycle
+
+### Systematic Refinement
+
+1. **Apply prompt** to diverse paper set
+2. **Evaluate outputs** using LLM judge
+3. **Analyze failure patterns** through axial coding
+4. **Refine prompt** to address specific issues
+5. **Test improvements** on held-out papers
+6. **Repeat** until satisfactory performance
+
+:::{.fragment}
+[Key principle:]{.alert} Each iteration should target specific, identified failure modes
+:::
+
+## Exercise 7: One Improvement Iteration
+
+### Putting It All Together
+
+**Your task:**
+
+1. **Identify** your top failure mode from evaluation results
+2. **Modify** your prompt to address this specific issue
+3. **Test** the modified prompt on 1-2 papers
+4. **Evaluate** using your judge criteria
+5. **Compare** with previous version
+
+**Time:** 20-25 minutes
+
+## Scaling Considerations
+
+### From Individual Papers to Literature Review
+
+**Moving beyond single papers:**
+
+- **Batch processing:** How to handle multiple papers efficiently
+- **Consistency across batches:** Maintaining quality over time
+- **Version control:** Tracking prompt iterations and performance
+- **Quality monitoring:** Ongoing evaluation as you process more papers
+
+:::{.fragment}
+**Next challenge:** Using these summaries as context for literature review synthesis
+:::
+
+# Addressing the Three Gulfs {background-color="#40666e"}
+
+## Gulf of Comprehension: Solved?
+
+### Understanding Your Data and AI Performance
+
+**What we've achieved:**
+
+- **Open coding methodology** for systematic observation
+- **Axial coding** for pattern identification
+- **LLM judge** for scalable evaluation
+- **Iterative improvement** process
+
+:::{.fragment}
+**Ongoing needs:**
+
+- Regular evaluation as you process more papers
+- Monitoring for new failure modes
+- Adaptation to different research domains
+:::
+
+## Gulf of Specification: Progress Made
+
+### Communicating Intent to AI
+
+**What we've built:**
+
+- **Comprehensive prompts** with detailed specifications
+- **Clear output formatting** requirements
+- **Explicit quality standards** and constraints
+- **Error handling** instructions
+
+:::{.fragment}
+**Remember:** Specification is never "done" - it evolves with your understanding
+:::
+
+## Gulf of Generalization: The Ongoing Challenge
+
+### Consistent Performance Across Inputs
+
+**What we've learned:**
+
+- Different paper types require different approaches
+- Some domains are more challenging than others
+- Evaluation helps identify generalization
+
+[^1]: https://thingsithinkithink.blog/posts/2025/06-08-llm-evals-lesson-1/
+	"The core of the first lesson was Shreya’s “Three Gulfs Model” for understanding LLM development challenges. "
+
+[^2]: https://thingsithinkithink.blog/posts/2025/06-08-llm-evals-lesson-1/
+	"[Three Gulfs Model diagram showing Developer, LLM Pipeline, and Data nodes with the gulfs between them] This represents the challenge of communicating..."
+
+[^3]: https://thingsithinkithink.blog/posts/2025/06-08-llm-evals-lesson-1/
+	"The core of the first lesson was Shreya’s “Three Gulfs Model” for understanding LLM development challenges. She framed this as the different hats deve..."

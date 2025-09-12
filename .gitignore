@@ -1,0 +1,25 @@
+# Quarto
+/.quarto/
+/_site/
+/_book/
+/_freeze/
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+
+# Reveal.js output
+*_files/
+*_cache/
+_extensions/
