@@ -91,10 +91,6 @@ Researchers, graduate students, and professionals who want to:
 - Develop reliable, ethical approaches to AI-assisted research
 - Stay in control while leveraging AI capabilities
 
----
-
-*Course materials and updates will be provided closer to the course date.*
-
 ## Getting Started with Quarto/Reveal.js
 
 This course uses Quarto with Reveal.js for interactive presentations.
@@ -114,3 +110,7 @@ This will open the presentation in your local browser with live reload.
 
 ### Converting to PDF
 Built-in print stylesheet (recommended): Quarto reveal.js presentations can be exported to PDF via a special print stylesheet. Simply add `?print-pdf` to your presentation URL, open the browser print dialog (Ctrl+P), change destination to "Save as PDF", set layout to landscape, margins to none, and enable background graphics.
+
+---
+
+*Course materials and updates will be provided closer to the course date.*
