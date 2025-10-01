@@ -91,6 +91,10 @@ Researchers, graduate students, and professionals who want to:
 - Develop reliable, ethical approaches to AI-assisted research
 - Stay in control while leveraging AI capabilities
 
+## Presentations
+
+- [Use of AI for Literature Review]("./presentations/Use of AI for Literature Review.pdf")
+
 ## Getting Started with Quarto/Reveal.js
 
 This course uses Quarto with Reveal.js for interactive presentations.
