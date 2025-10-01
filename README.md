@@ -93,7 +93,7 @@ Researchers, graduate students, and professionals who want to:
 
 ## Presentations
 
-- [Use of AI for Literature Review]("./presentations/Use of AI for Literature Review.pdf")
+- [Use of AI for Literature Review](./presentations/Use of AI for Literature Review.pdf)
 
 ## Getting Started with Quarto/Reveal.js
 
