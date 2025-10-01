@@ -93,7 +93,8 @@ Researchers, graduate students, and professionals who want to:
 
 ## Presentations
 
-- [Use of AI for Literature Review](./presentations/Use of AI for Literature Review.pdf)
+- [Use of AI for Literature Review](./presentations/Use%20of%20AI%20for%20Literature%20Review.pdf)
+- [What You Need to Know About LLM Training](./presentations/What%20You%20Need%20to%20Know%20About%20LLM%20Training.pdf)
 
 ## Getting Started with Quarto/Reveal.js
 

@@ -23,3 +23,5 @@ venv/
 *_files/
 *_cache/
 _extensions/
+
+_todo.md

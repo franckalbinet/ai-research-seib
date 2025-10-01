@@ -196,7 +196,7 @@ You've heard terms like "reasoning," "intelligence," and "understanding" applied
 
 # Recent Innovations {background-color="#40666e"}
 
-## Beyond Reinforcement Learning
+## Reinforcement Learning
 
 ### The DeepSeek Innovation
 
@@ -376,14 +376,7 @@ You've heard terms like "reasoning," "intelligence," and "understanding" applied
 [Next steps:]{.alert} How does this change how you think about using AI in your research?
 :::
 
-## Discussion
+## Further Reading
 
-### Your Questions
-
-- Which concepts need clarification?
-- How does this connect to your research challenges?
-- What implications do you see for literature review work?
-
-:::{.fragment}
-Let's explore how this foundation knowledge will guide our hands-on practice
-:::
+- [What Decision-Makers Need to Know About AI Training](https://franck-albi-net.pla.sh/post/llm-training-for-decision-makers)
+- [Constitutional AI](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
