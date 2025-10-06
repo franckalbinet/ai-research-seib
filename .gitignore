@@ -25,3 +25,5 @@ venv/
 _extensions/
 
 _todo.md
+
+**/.DS_Store

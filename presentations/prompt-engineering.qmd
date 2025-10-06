@@ -52,9 +52,7 @@ From researcher feedback, common challenges include:
 
 ### The Three Gulfs Framework
 
-![Three Gulfs Model - showing Developer, LLM Pipeline, and Data with the gulfs between them](img/three-gulfs-model.png)
-
-The core framework for understanding LLM development challenges, showing the different hats developers must wear when building effective pipelines. [^3]
+![Three Gulfs Model - showing Developer, LLM Pipeline, and Data with the gulfs between them[^3]](img/three-gulfs-model.png){width="70%"}
 
 ## Gulf 1: Comprehension
 
@@ -66,8 +64,7 @@ The core framework for understanding LLM development challenges, showing the dif
 **In literature review context:**
 
 - You can't manually read every paper or examine every AI-generated summary
-- Hard to understand patterns, failure modes, or data characteristics across hundreds of documents
-- Different paper types (experimental, theoretical, clinical) may behave differently
+- Hard to understand patterns, failure modes, or data characteristics across hundreds of documents of different types (experimental, theoretical, ...)
 :::
 
 :::{.fragment}
@@ -159,7 +156,7 @@ Understanding the Three Gulfs helps us:
 :::{.fragment}
 **While you work:**
 
-- Paste the full paper text (or as much as fits)
+- Paste/upload the full paper text (or as much as fits)
 - Note what the AI produces
 - **Start open coding:** Jot down what you observe - both good and problematic
 :::
@@ -586,5 +583,4 @@ Based on collective analysis, common categories include:
 [^2]: https://thingsithinkithink.blog/posts/2025/06-08-llm-evals-lesson-1/
 	"[Three Gulfs Model diagram showing Developer, LLM Pipeline, and Data nodes with the gulfs between them] This represents the challenge of communicating..."
 
-[^3]: https://thingsithinkithink.blog/posts/2025/06-08-llm-evals-lesson-1/
-	"The core of the first lesson was Shreya’s “Three Gulfs Model” for understanding LLM development challenges. She framed this as the different hats deve..."
+[^3]: https://arxiv.org/pdf/2504.14764
