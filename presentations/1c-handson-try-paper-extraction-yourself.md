@@ -17,7 +17,7 @@ Extract key information from a scientific paper in a structured way that would b
 4. **Don't overthink it** - just try your best approach
 
 ## Capture Your Experience
-As you work, note down observations in our [shared Google doc]:
+As you work, note down observations in our [shared Google doc](https://docs.google.com/document/d/1MYk652mmVnQTW6uHXcOiHJ5W08zU-ZOi524W7Rt83NM/edit?usp=sharing):
 - What worked well?
 - What was confusing or inconsistent?
 - What surprised you?
