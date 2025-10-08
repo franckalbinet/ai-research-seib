@@ -442,8 +442,8 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Franck Albinet">
-  <meta name="dcterms.date" content="2025-10-01">
-  <title>What You Need to Know About LLM Training</title>
+  <meta name="dcterms.date" content="2025-10-08">
+  <title>Prompt Engineering Principles</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -988,8 +988,8 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">What You Need to Know About LLM Training</h1>
-  <p class="subtitle">Cutting Through the Hype to Understand AI Capabilities</p>
+  <h1 class="title">Prompt Engineering Principles</h1>
+  <p class="subtitle">Building Effective Prompts Through Iteration</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1005,380 +1005,567 @@ Franck Albinet
     </div>
 </div>
 
-  <p class="date">October 1, 2025</p>
+  <p class="date">October 8, 2025</p>
+</section>
+<section id="our-goal-for-today" class="slide level2">
+<h2>Our Goal for Today</h2>
+<h3 id="building-a-paper-extraction-prompt">Building a Paper Extraction Prompt</h3>
+<p>By the end of today, you’ll have:</p>
+<ul>
+<li>A systematic understanding of prompt engineering principles</li>
+<li>A working prompt for extracting paper information</li>
+<li>Experience with iterative refinement</li>
+<li>Confidence to tackle other prompting tasks</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Key insight:</span> We’ll build ONE prompt together, adding complexity step by step</p>
+</div>
 </section>
 <section>
-<section id="why-this-matters" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Why This Matters</h1>
+<section id="the-seven-building-blocks" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>The Seven Building Blocks</h1>
 
 </section>
-<section id="the-challenge" class="slide level2">
-<h2>The Challenge</h2>
-<h3 id="demystifying-ai-terminology">Demystifying AI Terminology</h3>
-<p>You’ve heard terms like “reasoning,” “intelligence,” and “understanding” applied to AI systems.</p>
+<section id="prompting-fundamentals" class="slide level2">
+<h2>Prompting Fundamentals</h2>
+<h3 id="the-components-of-effective-prompts">The Components of Effective Prompts</h3>
+<p>A well-structured prompt typically includes:</p>
+<ol type="1">
+<li><strong>Role and Objective</strong> - Define the AI’s persona and goal</li>
+<li><strong>Instructions / Response Rules</strong> - Clear, specific directives</li>
+<li><strong>Context</strong> - The relevant background information</li>
+<li><strong>Examples</strong> - Few-shot prompting for guidance</li>
+<li><strong>Reasoning Steps</strong> - Chain-of-thought prompting</li>
+<li><strong>Output Formatting</strong> - Structure and constraints</li>
+<li><strong>Delimiters</strong> - Clear organization of prompt sections</li>
+</ol>
 <div class="fragment">
-<p><strong>The reality:</strong> These terms are a mix of:</p>
+<p><strong>Reference:</strong> See the full guidelines in <code>resources/prompt_fundamentals.md</code></p>
+</div>
+</section>
+<section id="why-these-building-blocks" class="slide level2">
+<h2>Why These Building Blocks?</h2>
+<h3 id="addressing-the-gulf-of-specification">Addressing the Gulf of Specification</h3>
+<p>Remember the Three Gulfs from Day 1?</p>
+<div class="fragment">
+<p><strong>Gulf of Specification:</strong> The gap between what you want and what you communicate</p>
+<p>These building blocks help you:</p>
 <ul>
-<li>Marketing language to make AI sound impressive</li>
-<li>Engineers needing names for technical processes</li>
-<li>The persistent myth that AI mimics human cognition</li>
+<li>Make your intent explicit</li>
+<li>Reduce ambiguity</li>
+<li>Get consistent outputs</li>
+<li>Bridge that gulf systematically</li>
 </ul>
 </div>
 </section>
-<section id="the-challenge-cont." class="slide level2">
-<h2>The Challenge (cont.)</h2>
-<h3 id="what-researchers-actually-need">What Researchers Actually Need</h3>
-<p><strong>Focus on what matters:</strong></p>
-<ul>
-<li>Understanding what these systems actually do</li>
-<li>Setting appropriate expectations</li>
-<li>Learning how to interact with them effectively</li>
-</ul>
+<section id="our-iterative-approach" class="slide level2">
+<h2>Our Iterative Approach</h2>
+<h3 id="how-well-work-today">How We’ll Work Today</h3>
+<p>We’ll build a paper extraction prompt in cycles:</p>
+<ol type="1">
+<li><strong>Start simple</strong> - Basic instruction only</li>
+<li><strong>Add complexity</strong> - One building block at a time</li>
+<li><strong>Test and observe</strong> - What changed?</li>
+<li><strong>Refine</strong> - Based on what we learned</li>
+</ol>
 <div class="fragment">
-<p><span class="alert">Key insight:</span> AI capabilities are specific, measurable processes—not mysterious intelligence</p>
+<p><span class="alert">Important:</span> This is how real prompt engineering works - iteration, not perfection on the first try</p>
 </div>
 </section></section>
 <section>
-<section id="the-four-stages-of-llm-training" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>The Four Stages of LLM Training</h1>
+<section id="cycle-1-basic-instruction" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Cycle 1: Basic Instruction</h1>
 
 </section>
-<section id="the-four-stages-of-llm-training-1" class="slide level2">
-<h2>The Four Stages of LLM Training</h2>
-<h3 id="our-journey-today">Our Journey Today</h3>
-<ol type="1">
-<li><strong>Self-Supervised Pre-Training</strong> - Building the Foundation</li>
-<li><strong>Supervised Fine-Tuning</strong> - Learning to Converse<br>
-</li>
-<li><strong>Preference Fine-Tuning</strong> - Learning What Humans Want</li>
-<li><strong>Reasoning Fine-Tuning</strong> - Teaching Step-by-Step Analysis</li>
-</ol>
+<section id="building-block-instructions" class="slide level2">
+<h2>Building Block: Instructions</h2>
+<h3 id="starting-at-the-simplest-level">Starting at the Simplest Level</h3>
+<p><strong>The core component:</strong> Clear, specific directives for the task</p>
 <div class="fragment">
-<p><span class="alert">Each stage builds specific capabilities</span> that inform how we should interact with AI</p>
+<p><strong>For paper extraction, a basic instruction might be:</strong></p>
+<blockquote>
+<p>“Summarize this scientific paper.”</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>“Extract key information from this paper.”</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><strong>Question:</strong> What’s missing from these instructions?</p>
 </div>
 </section>
-<section id="the-four-stages-of-llm-training-2" class="slide level2">
-<h2>The Four Stages of LLM Training</h2>
-<h3 id="our-journey-today-1">Our Journey Today</h3>
-<ol type="1">
-<li><span class="alert"><strong>Self-Supervised Pre-Training</strong></span> - Building the Foundation ← <em>Current</em></li>
-<li><strong>Supervised Fine-Tuning</strong> - Learning to Converse<br>
-</li>
-<li><strong>Preference Fine-Tuning</strong> - Learning What Humans Want</li>
-<li><strong>Reasoning Fine-Tuning</strong> - Teaching Step-by-Step Analysis</li>
-</ol>
-</section>
-<section id="stage-1-self-supervised-pre-training" class="slide level2">
-<h2>Stage 1: Self-Supervised Pre-Training</h2>
-<h3 id="building-the-foundation">Building the Foundation</h3>
-<p><strong>The task:</strong> Learn to predict what word comes next</p>
+<section id="what-makes-good-instructions" class="slide level2">
+<h2>What Makes Good Instructions?</h2>
+<h3 id="key-characteristics">Key Characteristics</h3>
 <ul>
-<li>Model reads massive amounts of text (books, websites, articles)</li>
-<li>Parts are intentionally hidden: <code>&quot;The cat sat on the ___&quot;</code></li>
-<li>System learns <code>&quot;mat&quot;</code> appears more often than <code>&quot;elephant&quot;</code></li>
+<li><strong>Specific:</strong> Define exactly what to do</li>
+<li><strong>Unambiguous:</strong> One clear interpretation</li>
+<li><strong>Actionable:</strong> The AI knows what action to take</li>
+<li><strong>Complete:</strong> Covers the full scope of the task</li>
 </ul>
 <div class="fragment">
-<p><strong>This is self-supervised learning</strong> - no human labels needed, just pattern recognition from existing text</p>
+<p><strong>But even good instructions alone aren’t enough…</strong></p>
 </div>
+</section>
+<section id="hands-on-cycle-1" class="slide level2">
+<h2>Hands-On: Cycle 1</h2>
+<h3 id="your-turn---basic-instruction">Your Turn - Basic Instruction</h3>
+<p><strong>Task:</strong> Create a basic instruction-only prompt for paper extraction</p>
+<p><strong>See:</strong> <code>session-2c-hands-on.md</code> for detailed guidance</p>
+<p><strong>Time:</strong> 15 minutes</p>
 <div class="fragment">
-<p><strong>What you get:</strong> A system that understands language structure but can’t hold conversations</p>
+<p><strong>Remember to note:</strong></p>
+<ul>
+<li>What output did you get?</li>
+<li>What was good?</li>
+<li>What was missing or inconsistent?</li>
+</ul>
 </div>
 </section>
-<section id="the-four-stages-of-llm-training-3" class="slide level2">
-<h2>The Four Stages of LLM Training</h2>
-<h3 id="our-journey-today-2">Our Journey Today</h3>
-<ol type="1">
-<li><del><strong>Self-Supervised Pre-Training</strong></del> - Building the Foundation ✓</li>
-<li><span class="alert"><strong>Supervised Fine-Tuning</strong></span> - Learning to Converse ← <em>Current</em></li>
-<li><strong>Preferred Fine-Tuning</strong> - Learning What Humans Want</li>
-<li><strong>Reasoning Fine-Tuning</strong> - Teaching Step-by-Step Analysis</li>
-</ol>
-</section>
-<section id="stage-2-supervised-fine-tuning" class="slide level2">
-<h2>Stage 2: Supervised Fine-Tuning</h2>
-<h3 id="learning-to-converse">Learning to Converse</h3>
-<p><strong>The problem:</strong> Text completion ≠ helpful assistant</p>
+<section id="debrief-cycle-1" class="slide level2">
+<h2>Debrief: Cycle 1</h2>
+<h3 id="what-did-we-learn">What Did We Learn?</h3>
+<p><strong>Group discussion:</strong></p>
 <ul>
-<li>Pre-trained model might continue: <code>&quot;This question often comes up...&quot;</code></li>
-<li>Instead of actually answering your question</li>
+<li>What worked with basic instructions?</li>
+<li>What problems did you encounter?</li>
+<li>What would you want to improve?</li>
 </ul>
 <div class="fragment">
-<p><strong>Example:</strong> Ask “What are key success factors?” → gets academic discussion instead of actionable answer</p>
-</div>
-</section>
-<section id="stage-2-supervised-fine-tuning-cont." class="slide level2">
-<h2>Stage 2: Supervised Fine-Tuning (cont.)</h2>
-<h3 id="the-solution">The Solution</h3>
-<p><strong>Show thousands of human-AI conversations</strong></p>
-<ul>
-<li>Learn dialogue structure</li>
-<li>Recognize questions and provide direct answers</li>
-<li>Package existing knowledge into useful responses</li>
-</ul>
-<div class="fragment">
-<p><strong>What you get:</strong> A conversational system, but it may still produce confident-sounding wrong answers</p>
-</div>
-</section>
-<section id="the-four-stages-of-llm-training-4" class="slide level2">
-<h2>The Four Stages of LLM Training</h2>
-<h3 id="our-journey-today-3">Our Journey Today</h3>
-<ol type="1">
-<li><del><strong>Self-Supervised Pre-Training</strong></del> - Building the Foundation ✓</li>
-<li><del><strong>Supervised Fine-Tuning</strong></del> - Learning to Converse ✓</li>
-<li><span class="alert"><strong>Preferred Fine-Tuning</strong></span> - Learning What Humans Want ← <em>Current</em></li>
-<li><strong>Reasoning Fine-Tuning</strong> - Teaching Step-by-Step Analysis</li>
-</ol>
-</section>
-<section id="stage-3-preference-fine-tuning" class="slide level2">
-<h2>Stage 3: Preference Fine-Tuning</h2>
-<h3 id="learning-what-humans-actually-want">Learning What Humans Actually Want</h3>
-<p><strong>The challenge:</strong> How do you train on subjective tasks?</p>
-<ul>
-<li>No single “right” way to write a compelling proposal</li>
-<li>Can’t easily create training examples for complex judgment calls</li>
-</ul>
-<div class="fragment">
-<p><strong>Example:</strong> What makes one research summary “better” than another? It’s often a matter of judgment, not facts</p>
-</div>
-</section>
-<section id="stage-3-preference-fine-tuning-cont." class="slide level2">
-<h2>Stage 3: Preference Fine-Tuning (cont.)</h2>
-<h3 id="the-approach">The Approach</h3>
-<p><strong>Human feedback on response quality</strong></p>
-<ul>
-<li>Show model multiple responses to same question</li>
-<li>Learn from human preferences about what’s better</li>
-<li>Also handles safety: refusing harmful requests</li>
-</ul>
-<div class="fragment">
-<p><strong>What you get:</strong> Responses aligned with human preferences, but may struggle with complex reasoning</p>
-</div>
-</section>
-<section id="the-four-stages-of-llm-training-5" class="slide level2">
-<h2>The Four Stages of LLM Training</h2>
-<h3 id="our-journey-today-4">Our Journey Today</h3>
-<ol type="1">
-<li><del><strong>Self-Supervised Pre-Training</strong></del> - Building the Foundation ✓</li>
-<li><del><strong>Supervised Fine-Tuning</strong></del> - Learning to Converse ✓</li>
-<li><del><strong>Preferred Fine-Tuning</strong></del> - Learning What Humans Want ✓</li>
-<li><span class="alert"><strong>Reasoning Fine-Tuning</strong></span> - Teaching Step-by-Step Analysis ← <em>Current</em></li>
-</ol>
-</section>
-<section id="stage-4-reasoning-fine-tuning" class="slide level2">
-<h2>Stage 4: Reasoning Fine-Tuning</h2>
-<h3 id="teaching-step-by-step-analysis">Teaching Step-by-Step Analysis</h3>
-<p><strong>The gap:</strong> Models jump to conclusions without showing work</p>
-<ul>
-<li>Ask for budget evaluation → immediate conclusion</li>
-<li>No systematic breakdown of the problem</li>
-</ul>
-<div class="fragment">
-<p><strong>The challenge:</strong> How do we get systematic analysis instead of quick answers?</p>
-</div>
-</section>
-<section id="stage-4-reasoning-fine-tuning-cont." class="slide level2">
-<h2>Stage 4: Reasoning Fine-Tuning (cont.)</h2>
-<h3 id="the-breakthrough">The Breakthrough</h3>
-<p><strong>The solution:</strong> Teach models to “think” step-by-step</p>
-<ul>
-<li>Break complex tasks into steps</li>
-<li>Consider multiple approaches</li>
-<li>Show the analytical process</li>
-</ul>
-<div class="fragment">
-<p><strong>What you get:</strong> Systems that can tackle multi-step problems and show their work</p>
+<p><span class="alert">Common pattern:</span> The AI gives you <em>something</em>, but probably not quite what you wanted</p>
 </div>
 </section></section>
 <section>
-<section id="recent-innovations" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Recent Innovations</h1>
+<section id="cycle-2-adding-role-objective" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Cycle 2: Adding Role &amp; Objective</h1>
 
 </section>
-<section id="reinforcement-learning" class="slide level2">
-<h2>Reinforcement Learning</h2>
-<h3 id="the-deepseek-innovation">The DeepSeek Innovation</h3>
-<p><strong>Traditional approach:</strong> Expensive human evaluation of every response</p>
-<p><strong>DeepSeek’s insight:</strong> Focus on verifiable problems</p>
+<section id="building-blocks-role-and-objective" class="slide level2">
+<h2>Building Blocks: Role and Objective</h2>
+<h3 id="setting-the-context">Setting the Context</h3>
+<p><strong>Role:</strong> Define the AI’s persona</p>
 <ul>
-<li>Math and coding have clear right/wrong answers</li>
-<li>Success can be measured automatically</li>
-<li>Dramatically reduced training costs</li>
+<li>Helps the AI “understand” its perspective</li>
+<li>Influences tone and approach</li>
 </ul>
+<p><strong>Objective:</strong> State the overall goal</p>
+<ul>
+<li>Provides purpose beyond the immediate instruction</li>
+<li>Helps prioritize what matters</li>
+</ul>
+</section>
+<section id="example-role-objective" class="slide level2">
+<h2>Example: Role &amp; Objective</h2>
+<h3 id="for-paper-extraction">For Paper Extraction</h3>
+<p><strong>Role:</strong></p>
+<blockquote>
+<p>“You are a scientific literature extraction specialist with expertise in [domain] research.”</p>
+</blockquote>
+<p><strong>Objective:</strong></p>
+<blockquote>
+<p>“Generate a comprehensive, structured summary of the provided scientific paper optimized for literature review preparation.”</p>
+</blockquote>
 <div class="fragment">
-<p><strong>Impact:</strong> Made sophisticated reasoning capabilities more accessible</p>
+<p><strong>Notice:</strong> This adds context <em>around</em> your instructions</p>
 </div>
 </section>
-<section id="the-next-wave-gepa" class="slide level2">
-<h2>The Next Wave: GEPA</h2>
-<h3 id="reflective-prompt-evolution-july-2025">Reflective Prompt Evolution (July 2025)</h3>
-<p><strong>New insight:</strong> Since these are language models, why not teach them using language?</p>
+<section id="why-this-matters" class="slide level2">
+<h2>Why This Matters</h2>
+<h3 id="influencing-ai-behavior">Influencing AI Behavior</h3>
+<p>Adding role and objective:</p>
 <ul>
-<li>Natural language feedback instead of numerical rewards</li>
-<li>Models learn to critique their own work</li>
-<li>Self-reflection and improvement through conversation</li>
+<li>Activates relevant “knowledge” in the model</li>
+<li>Sets appropriate tone and detail level</li>
+<li>Provides decision-making criteria</li>
+<li>Makes the task feel more bounded</li>
 </ul>
 <div class="fragment">
-<p><strong>Results:</strong> 10-20% better performance with 35× fewer computational resources</p>
+<p><span class="alert">Key point:</span> You’re not just saying WHAT to do, but WHO is doing it and WHY</p>
+</div>
+</section>
+<section id="hands-on-cycle-2" class="slide level2">
+<h2>Hands-On: Cycle 2</h2>
+<h3 id="your-turn---add-role-objective">Your Turn - Add Role &amp; Objective</h3>
+<p><strong>Task:</strong> Enhance your Cycle 1 prompt by adding: - An appropriate role - A clear objective</p>
+<p><strong>See:</strong> <code>session-2c-hands-on.md</code> for guidance</p>
+<p><strong>Time:</strong> 15 minutes</p>
+<div class="fragment">
+<p><strong>Compare:</strong> How does the output differ from Cycle 1?</p>
+</div>
+</section>
+<section id="debrief-cycle-2" class="slide level2">
+<h2>Debrief: Cycle 2</h2>
+<h3 id="what-changed">What Changed?</h3>
+<p><strong>Group discussion:</strong></p>
+<ul>
+<li>How did adding role/objective affect the output?</li>
+<li>Was it more aligned with what you wanted?</li>
+<li>What issues persist?</li>
+</ul>
+<div class="fragment">
+<p><strong>Next challenge:</strong> The output might be better, but is it <em>structured</em> the way you need?</p>
 </div>
 </section></section>
 <section>
-<section id="timeline-how-we-got-here" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Timeline: How We Got Here</h1>
+<section id="cycle-3-output-formatting" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Cycle 3: Output Formatting</h1>
 
 </section>
-<section id="the-early-foundation-2017-2019" class="slide level2">
-<h2>The Early Foundation (2017-2019)</h2>
-<h3 id="stage-1-self-supervised-pre-training-1">Stage 1: Self-Supervised Pre-Training</h3>
-<p><strong>2017:</strong> Transformer architecture (Google)</p>
-<ul>
-<li><a href="https://arxiv.org/abs/1706.03762">“Attention is All You Need” paper</a> revolutionizes NLP</li>
-</ul>
-<p><strong>2018:</strong> First breakthrough models</p>
-<ul>
-<li>GPT-1 (OpenAI) - generative pre-training</li>
-<li>BERT (Google) - bidirectional encoder</li>
-</ul>
+<section id="building-block-output-formatting" class="slide level2">
+<h2>Building Block: Output Formatting</h2>
+<h3 id="defining-structure-and-constraints">Defining Structure and Constraints</h3>
+<p><strong>The challenge:</strong> Even good content isn’t useful if it’s not structured properly</p>
 <div class="fragment">
-<p><strong>The foundation was set</strong> - but these models couldn’t hold conversations</p>
+<p><strong>Output formatting specifies:</strong></p>
+<ul>
+<li>Structure (sections, lists, tables)</li>
+<li>Format (JSON, Markdown, plain text)</li>
+<li>Constraints (length, level of detail)</li>
+<li>Required elements</li>
+</ul>
 </div>
 </section>
-<section id="the-conversation-breakthrough-2020-2021" class="slide level2">
-<h2>The Conversation Breakthrough (2020-2021)</h2>
-<h3 id="stage-2-supervised-fine-tuning-1">Stage 2: Supervised Fine-Tuning</h3>
-<p><strong>2020:</strong> GPT-3 (OpenAI)</p>
-<ul>
-<li>First model that could follow instructions</li>
-<li>Showed emergent abilities at scale</li>
-</ul>
-<p><strong>2019-2022:</strong> Google’s contributions</p>
-<ul>
-<li>T5 (2019) - text-to-text transfer transformer</li>
-<li>PaLM (2022) - 540B parameter breakthrough</li>
-</ul>
+<section id="example-output-formatting" class="slide level2">
+<h2>Example: Output Formatting</h2>
+<h3 id="for-paper-extraction-1">For Paper Extraction</h3>
+<pre><code>**Format required:**
+- Title and citation information
+- Abstract (original, verbatim)
+- Key takeaways by section (bullet points)
+- Methodology summary
+- Main results with statistics
+- Figures and tables described
+- Maximum 2000 tokens</code></pre>
 <div class="fragment">
-<p><strong>Models could now converse</strong> - but responses weren’t always helpful or safe</p>
+<p><span class="alert">Critical:</span> Be explicit about structure - don’t assume the AI will guess correctly</p>
 </div>
 </section>
-<section id="the-alignment-revolution-2022" class="slide level2">
-<h2>The Alignment Revolution (2022)</h2>
-<h3 id="stage-3-preference-fine-tuning-1">Stage 3: Preference Fine-Tuning</h3>
-<p><strong>November 2022:</strong> ChatGPT launch (OpenAI)</p>
+<section id="why-formatting-matters" class="slide level2">
+<h2>Why Formatting Matters</h2>
+<h3 id="consistency-and-usability">Consistency and Usability</h3>
+<p>Explicit formatting requirements:</p>
 <ul>
-<li>RLHF (Reinforcement Learning from Human Feedback)</li>
-<li>Suddenly, everyone had access to AI assistance</li>
-</ul>
-<p><strong>Rapid competitive response:</strong></p>
-<ul>
-<li>Claude (Anthropic) - Constitutional AI approach</li>
-<li>Mistral AI emerges with open-source alternatives</li>
+<li>Ensure consistency across multiple papers</li>
+<li>Make outputs machine-readable (if needed)</li>
+<li>Enable comparison and synthesis later</li>
+<li>Reduce variability in results</li>
 </ul>
 <div class="fragment">
-<p><span class="alert">The AI race intensifies</span> - every company rushes to catch up</p>
+<p><strong>This directly addresses:</strong> Gulf of Specification AND Gulf of Generalization</p>
 </div>
 </section>
-<section id="the-reasoning-era-2024-2025" class="slide level2">
-<h2>The Reasoning Era (2024-2025)</h2>
-<h3 id="stage-4-reasoning-fine-tuning-1">Stage 4: Reasoning Fine-Tuning</h3>
-<p><strong>2024:</strong> OpenAI’s o1 series</p>
+<section id="hands-on-cycle-3" class="slide level2">
+<h2>Hands-On: Cycle 3</h2>
+<h3 id="your-turn---add-output-formatting">Your Turn - Add Output Formatting</h3>
+<p><strong>Task:</strong> Add detailed formatting requirements to your prompt</p>
+<p><strong>See:</strong> <code>session-2c-hands-on.md</code> for guidance</p>
+<p><strong>Time:</strong> 20 minutes</p>
+<div class="fragment">
+<p><strong>Pay attention to:</strong> How much more consistent is the output now?</p>
+</div>
+</section>
+<section id="debrief-cycle-3" class="slide level2">
+<h2>Debrief: Cycle 3</h2>
+<h3 id="progress-check">Progress Check</h3>
+<p><strong>Group discussion:</strong></p>
 <ul>
-<li>Chain-of-thought reasoning capabilities</li>
-<li>Models that “think” step-by-step</li>
-</ul>
-<p><strong>2024-2025:</strong> Efficiency breakthroughs</p>
-<ul>
-<li>DeepSeek-R1 - reasoning at lower cost</li>
-<li>GEPA (July 2025) - 35× more efficient training</li>
+<li>Is the structure now what you need?</li>
+<li>Are outputs more consistent?</li>
+<li>What would still improve it?</li>
 </ul>
 <div class="fragment">
-<p><strong>Key insight:</strong> Each breakthrough is adopted and improved by competitors within months, not years</p>
+<p><strong>Pattern emerging:</strong> More specific prompts → more consistent outputs</p>
 </div>
 </section></section>
 <section>
-<section id="implications-for-research" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Implications for Research</h1>
+<section id="cycle-4-context-examples" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Cycle 4: Context &amp; Examples</h1>
 
 </section>
-<section id="understanding-capabilities" class="slide level2">
-<h2>Understanding Capabilities</h2>
-<h3 id="what-this-means-for-literature-review">What This Means for Literature Review</h3>
-<p><strong>Stage 1 (Pre-training):</strong></p>
+<section id="building-blocks-context-and-examples" class="slide level2">
+<h2>Building Blocks: Context and Examples</h2>
+<h3 id="providing-background-and-guidance">Providing Background and Guidance</h3>
+<p><strong>Context:</strong> Relevant background information</p>
 <ul>
-<li>Vast knowledge of scientific literature</li>
-<li>Understanding of domain terminology and concepts</li>
+<li>Domain-specific knowledge</li>
+<li>Constraints or requirements</li>
+<li>What the output will be used for</li>
 </ul>
-<p><strong>Stage 2 (Instruction following):</strong></p>
+<p><strong>Examples (Few-shot):</strong> Sample input-output pairs</p>
 <ul>
-<li>Can respond to specific research queries</li>
-<li>Formats information appropriately</li>
+<li>Shows exactly what you want</li>
+<li>Clarifies ambiguous instructions</li>
+<li>Demonstrates edge cases</li>
 </ul>
 </section>
-<section id="understanding-capabilities-cont." class="slide level2">
-<h2>Understanding Capabilities (cont.)</h2>
-<h3 id="what-this-means-for-literature-review-1">What This Means for Literature Review</h3>
-<p><strong>Stage 3 (Preference alignment):</strong></p>
+<section id="when-to-use-examples" class="slide level2">
+<h2>When to Use Examples</h2>
+<h3 id="the-power-of-few-shot-prompting">The Power of Few-Shot Prompting</h3>
+<p>Examples are especially valuable when:</p>
 <ul>
-<li>Produces responses researchers find useful</li>
-<li>Refuses to fabricate citations or make unsupported claims</li>
-</ul>
-<p><strong>Stage 4 (Reasoning):</strong></p>
-<ul>
-<li>Can analyze complex research questions systematically</li>
-<li>Shows analytical steps for verification</li>
+<li>Instructions are complex or nuanced</li>
+<li>You want a specific style or format</li>
+<li>Edge cases need to be handled</li>
+<li>The task has implicit requirements</li>
 </ul>
 <div class="fragment">
-<p><span class="alert">Critical insight:</span> Each stage enables different capabilities—understanding this helps you design better prompts</p>
+<p><strong>Trade-off:</strong> Examples take up token space but can dramatically improve results</p>
 </div>
 </section>
-<section id="practical-applications" class="slide level2">
-<h2>Practical Applications</h2>
-<h3 id="how-this-informs-your-ai-use">How This Informs Your AI Use</h3>
-<p><strong>Better prompting:</strong></p>
-<ul>
-<li>Ask for step-by-step analysis (leverages Stage 4)</li>
-<li>Specify output format (leverages Stage 2)</li>
-<li>Request evidence and reasoning (leverages all stages)</li>
-</ul>
-<div class="fragment">
-<p><strong>Example:</strong> “Analyze this research question step-by-step and show your reasoning” vs. “What do you think about this?”</p>
-</div>
+<section id="example-adding-context" class="slide level2">
+<h2>Example: Adding Context</h2>
+<h3 id="for-paper-extraction-2">For Paper Extraction</h3>
+<p><strong>Context example:</strong></p>
+<pre><code>**Context:** These summaries will be used as input for 
+literature review synthesis. Focus on:
+- Quantitative results with statistical measures
+- Methodological approaches that could be compared
+- Key findings relevant to [specific research question]
+
+**Exclude:** Author affiliations, acknowledgments, 
+funding information</code></pre>
 </section>
-<section id="practical-applications-cont." class="slide level2">
-<h2>Practical Applications (cont.)</h2>
-<h3 id="better-evaluation">Better Evaluation</h3>
-<p><strong>Check the AI’s work systematically:</strong></p>
+<section id="hands-on-cycle-4" class="slide level2">
+<h2>Hands-On: Cycle 4</h2>
+<h3 id="your-turn---add-context">Your Turn - Add Context</h3>
+<p><strong>Task:</strong> Add relevant context to your prompt</p>
 <ul>
-<li>Check if reasoning steps make sense</li>
-<li>Verify factual claims independently</li>
-<li>Look for systematic vs. superficial analysis</li>
+<li>What will the summary be used for?</li>
+<li>What should be prioritized?</li>
+<li>What should be excluded?</li>
+</ul>
+<p><strong>Optional:</strong> Add an example if helpful</p>
+<p><strong>See:</strong> <code>session-2c-hands-on.md</code> for guidance</p>
+<p><strong>Time:</strong> 20 minutes</p>
+</section>
+<section id="debrief-cycle-4" class="slide level2">
+<h2>Debrief: Cycle 4</h2>
+<h3 id="refinement-continues">Refinement Continues</h3>
+<p><strong>Group discussion:</strong></p>
+<ul>
+<li>Did context help focus the output?</li>
+<li>If you used examples, how did they help?</li>
+<li>Is the output now “good enough” for your needs?</li>
 </ul>
 <div class="fragment">
-<p><strong>Remember:</strong> Understanding the training helps you work <em>with</em> the AI’s strengths rather than against its limitations</p>
+<p><span class="alert">Key question:</span> When is a prompt “good enough”? (It depends on your use case!)</p>
 </div>
 </section></section>
 <section>
-<section id="questions-discussion" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Questions &amp; Discussion</h1>
+<section id="advanced-building-blocks" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Advanced Building Blocks</h1>
 
 </section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways</h2>
-<h3 id="moving-forward">Moving Forward</h3>
-<ul>
-<li>AI capabilities result from specific training stages</li>
-<li>Each stage builds particular abilities</li>
-<li>Understanding this helps you use AI more effectively</li>
-<li>The field continues evolving rapidly</li>
-</ul>
+<section id="reasoning-steps" class="slide level2">
+<h2>Reasoning Steps</h2>
+<h3 id="chain-of-thought-prompting">Chain-of-Thought Prompting</h3>
+<p><strong>When to use:</strong> - Complex analysis tasks - Multi-step reasoning needed - Want to see the AI’s thinking process</p>
+<p><strong>Example:</strong> “Think step by step before answering”</p>
 <div class="fragment">
-<p><span class="alert">Next steps:</span> How does this change how you think about using AI in your research?</p>
+<p><strong>For paper extraction:</strong> Less critical, but useful for evaluation tasks</p>
 </div>
 </section>
-<section id="further-reading" class="slide level2">
-<h2>Further Reading</h2>
+<section id="delimiters" class="slide level2">
+<h2>Delimiters</h2>
+<h3 id="organizing-complex-prompts">Organizing Complex Prompts</h3>
+<p><strong>Purpose:</strong> Clear separation of prompt sections</p>
+<p><strong>Common markers:</strong> <code>###</code>, <code>---</code>, XML tags</p>
+<div class="fragment">
+<p><strong>For paper extraction:</strong> Helpful as prompts grow more complex</p>
+</div>
+</section>
+<section id="when-to-use-reasoning-steps" class="slide level2">
+<h2>When to Use Reasoning Steps</h2>
+<h3 id="chain-of-thought-prompting-1">Chain-of-Thought Prompting</h3>
+<p>Best for tasks requiring:</p>
 <ul>
-<li><a href="https://franck-albi-net.pla.sh/post/llm-training-for-decision-makers">What Decision-Makers Need to Know About AI Training</a></li>
-<li><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">Constitutional AI</a></li>
+<li>Multi-step analysis</li>
+<li>Comparison or evaluation, complex decision-making, verification of results</li>
 </ul>
+<div class="fragment">
+<p><strong>Example for evaluation task:</strong></p>
+<blockquote>
+<p>“Before rating this paper’s methodology, first identify the study design, then assess each component (sampling, measurement, analysis), and finally provide an overall rating with justification.”</p>
+</blockquote>
+</div>
+</section>
+<section id="cycle-5-optional-advanced-features" class="slide level2">
+<h2>Cycle 5 (Optional): Advanced Features</h2>
+<h3 id="your-choice">Your Choice</h3>
+<p><strong>If time allows and interest exists:</strong></p>
+<p>Add reasoning steps or better organization with delimiters</p>
+<p><strong>See:</strong> <code>session-2c-hands-on.md</code> for guidance</p>
+<p><strong>Time:</strong> 15-20 minutes</p>
+</section></section>
+<section>
+<section id="the-complete-picture" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>The Complete Picture</h1>
+
+</section>
+<section id="from-simple-to-sophisticated" class="slide level2">
+<h2>From Simple to Sophisticated</h2>
+<h3 id="your-prompt-evolution">Your Prompt Evolution</h3>
+<p>You’ve built a prompt from:</p>
+<ol type="1">
+<li>✅ Basic instruction</li>
+<li>✅ + Role &amp; Objective</li>
+<li>✅ + Output Formatting</li>
+<li>✅ + Context (&amp; Examples)</li>
+<li>✅ (Optional) Reasoning Steps &amp; Delimiters</li>
+</ol>
+<div class="fragment">
+<p><strong>This is the iterative process</strong> of real prompt engineering</p>
+</div>
+</section>
+<section id="the-professional-version" class="slide level2">
+<h2>The Professional Version</h2>
+<h3 id="where-this-can-lead">Where This Can Lead</h3>
+<p><strong>Example:</strong> The <code>prompt_paper_representation.md</code> shows a fully developed version</p>
+<ul>
+<li>All building blocks integrated</li>
+<li>Comprehensive specifications</li>
+<li>Error handling</li>
+<li>Quality standards</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Important truth:</span> This wasn’t written perfectly from the start - it evolved through iteration</p>
+</div>
+</section>
+<section id="honesty-moment" class="slide level2">
+<h2>Honesty Moment</h2>
+<h3 id="how-the-example-prompt-was-created">How the Example Prompt Was Created</h3>
+<p><strong>The truth about <code>prompt_paper_representation.md</code>:</strong></p>
+<ol type="1">
+<li>I built an initial version using these principles</li>
+<li>I tested it on several papers</li>
+<li>I identified failure modes</li>
+<li><strong>I asked Claude AI to refine it</strong> based on my observations</li>
+<li>I tested again and refined further</li>
+</ol>
+<div class="fragment">
+<p><strong>Lesson:</strong> Use AI to help refine prompts, but start with human-led iteration first</p>
+</div>
+</section>
+<section id="why-start-manual" class="slide level2">
+<h2>Why Start Manual?</h2>
+<h3 id="the-value-of-doing-it-yourself-first">The Value of Doing It Yourself First</h3>
+<p><strong>Manual iteration first teaches you:</strong></p>
+<ul>
+<li>What you actually want to achieve</li>
+<li>Hidden requirements and edge cases</li>
+<li>How to recognize failure modes</li>
+<li>How to evaluate quality</li>
+</ul>
+<div class="fragment">
+<p><strong>Then AI refinement helps with:</strong></p>
+<ul>
+<li>Phrasing and clarity</li>
+<li>Comprehensive coverage</li>
+<li>Formatting and organization</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="alert">Key principle:</span> Understand before you delegate</p>
+</div>
+</section></section>
+<section>
+<section id="group-comparison" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Group Comparison</h1>
+
+</section>
+<section id="sharing-our-work" class="slide level2">
+<h2>Sharing Our Work</h2>
+<h3 id="what-did-we-build">What Did We Build?</h3>
+<p><strong>Activity:</strong> Let’s see a few examples</p>
+<ul>
+<li>Volunteers share their final prompts</li>
+<li>What building blocks did you emphasize?</li>
+<li>What worked well for your domain?</li>
+<li>What challenges remain?</li>
+</ul>
+<div class="fragment">
+<p><strong>Time:</strong> 15-20 minutes</p>
+</div>
+</section>
+<section id="common-patterns" class="slide level2">
+<h2>Common Patterns</h2>
+<h3 id="what-we-typically-see">What We Typically See</h3>
+<p>Across different domains and approaches:</p>
+<ul>
+<li><strong>Variation in detail level</strong> - Some want more, some less</li>
+<li><strong>Domain-specific requirements</strong> - Different fields need different information</li>
+<li><strong>Trade-offs</strong> - Comprehensiveness vs. token limits</li>
+<li><strong>Personal style</strong> - There’s no single “right” prompt</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Important insight:</span> Good prompts are tailored to YOUR specific needs</p>
+</div>
+</section></section>
+<section>
+<section id="tomorrow-evaluation" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Tomorrow: Evaluation</h1>
+
+</section>
+<section id="the-next-challenge" class="slide level2">
+<h2>The Next Challenge</h2>
+<h3 id="how-do-we-know-its-working">How Do We Know It’s Working?</h3>
+<p>Today you built prompts and observed outputs.</p>
+<p><strong>But:</strong></p>
+<ul>
+<li>How do you evaluate systematically?</li>
+<li>What if you process 50 papers?</li>
+<li>How do you identify failure patterns?</li>
+<li>When is it “good enough”?</li>
+</ul>
+<div class="fragment">
+<p><strong>Tomorrow (Day 3):</strong> We’ll tackle systematic evaluation</p>
+</div>
+</section>
+<section id="homework-optional" class="slide level2">
+<h2>Homework (Optional)</h2>
+<h3 id="continue-experimenting">Continue Experimenting</h3>
+<p><strong>If you’d like:</strong></p>
+<ul>
+<li>Test your prompt on 2-3 different papers (or other use cases)</li>
+<li>Note what works and what doesn’t</li>
+<li>Add observations to the shared doc</li>
+<li>Try refining your prompt further</li>
+</ul>
+<div class="fragment">
+<p><strong>Question to ponder:</strong> What would “good enough” look like for your actual research needs?</p>
+</div>
+</section></section>
+<section>
+<section id="questions-wrap-up" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Questions &amp; Wrap-Up</h1>
+
+</section>
+<section id="key-takeaways-from-day-2" class="slide level2">
+<h2>Key Takeaways from Day 2</h2>
+<h3 id="what-we-learned">What We Learned</h3>
+<ol type="1">
+<li><strong>Seven building blocks</strong> provide structure for effective prompts</li>
+<li><strong>Iteration is essential</strong> - start simple, add complexity</li>
+<li><strong>Specificity matters</strong> - explicit instructions reduce ambiguity</li>
+<li><strong>No perfect prompt</strong> - tailor to your needs and domain</li>
+<li><strong>AI can help refine</strong> - but understand the principles first</li>
+</ol>
+<div class="fragment">
+<p><strong>Tomorrow:</strong> We’ll learn how to evaluate these prompts systematically</p>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<h3 id="before-we-close">Before We Close</h3>
+<ul>
+<li>Clarifications on any building blocks?</li>
+<li>Challenges with your specific use case?</li>
+<li>Questions about tomorrow?</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">See you tomorrow for Day 3!</span></p>
+</div>
 
 </section></section>
     </div>

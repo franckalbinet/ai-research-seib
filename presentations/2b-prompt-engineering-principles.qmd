@@ -1,0 +1,614 @@
+---
+title: "Prompt Engineering Principles"
+subtitle: "Building Effective Prompts Through Iteration"
+format:
+  clean-revealjs:
+    self-contained: true
+author:
+  - name: Franck Albinet
+    email: franckalbinet@gmail.com
+    affiliation: "Independent Data Science & AI Consultant"
+date: last-modified
+execute:
+  eval: false
+footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
+---
+
+## Our Goal for Today
+
+### Building a Paper Extraction Prompt
+
+By the end of today, you'll have:
+
+- A systematic understanding of prompt engineering principles
+- A working prompt for extracting paper information
+- Experience with iterative refinement
+- Confidence to tackle other prompting tasks
+
+:::{.fragment}
+[Key insight:]{.alert} We'll build ONE prompt together, adding complexity step by step
+:::
+
+# The Seven Building Blocks {background-color="#40666e"}
+
+## Prompting Fundamentals
+
+### The Components of Effective Prompts
+
+A well-structured prompt typically includes:
+
+1. **Role and Objective** - Define the AI's persona and goal
+2. **Instructions / Response Rules** - Clear, specific directives
+3. **Context** - The relevant background information
+4. **Examples** - Few-shot prompting for guidance
+5. **Reasoning Steps** - Chain-of-thought prompting
+6. **Output Formatting** - Structure and constraints
+7. **Delimiters** - Clear organization of prompt sections
+
+:::{.fragment}
+**Reference:** See the full guidelines in `resources/prompt_fundamentals.md`
+:::
+
+## Why These Building Blocks?
+
+### Addressing the Gulf of Specification
+
+Remember the Three Gulfs from Day 1?
+
+:::{.fragment}
+**Gulf of Specification:** The gap between what you want and what you communicate
+
+These building blocks help you:
+
+- Make your intent explicit
+- Reduce ambiguity
+- Get consistent outputs
+- Bridge that gulf systematically
+:::
+
+## Our Iterative Approach
+
+### How We'll Work Today
+
+We'll build a paper extraction prompt in cycles:
+
+1. **Start simple** - Basic instruction only
+2. **Add complexity** - One building block at a time
+3. **Test and observe** - What changed?
+4. **Refine** - Based on what we learned
+
+:::{.fragment}
+[Important:]{.alert} This is how real prompt engineering works - iteration, not perfection on the first try
+:::
+
+# Cycle 1: Basic Instruction {background-color="#40666e"}
+
+## Building Block: Instructions
+
+### Starting at the Simplest Level
+
+**The core component:** Clear, specific directives for the task
+
+:::{.fragment}
+**For paper extraction, a basic instruction might be:**
+
+> "Summarize this scientific paper."
+
+or
+
+> "Extract key information from this paper."
+:::
+
+:::{.fragment}
+**Question:** What's missing from these instructions?
+:::
+
+## What Makes Good Instructions?
+
+### Key Characteristics
+
+- **Specific:** Define exactly what to do
+- **Unambiguous:** One clear interpretation
+- **Actionable:** The AI knows what action to take
+- **Complete:** Covers the full scope of the task
+
+:::{.fragment}
+**But even good instructions alone aren't enough...**
+:::
+
+## Hands-On: Cycle 1
+
+### Your Turn - Basic Instruction
+
+**Task:** Create a basic instruction-only prompt for paper extraction
+
+**See:** `session-2c-hands-on.md` for detailed guidance
+
+**Time:** 15 minutes
+
+:::{.fragment}
+**Remember to note:**
+
+- What output did you get?
+- What was good?
+- What was missing or inconsistent?
+:::
+
+---
+
+## Debrief: Cycle 1
+
+### What Did We Learn?
+
+**Group discussion:**
+
+- What worked with basic instructions?
+- What problems did you encounter?
+- What would you want to improve?
+
+:::{.fragment}
+[Common pattern:]{.alert} The AI gives you *something*, but probably not quite what you wanted
+:::
+
+# Cycle 2: Adding Role & Objective {background-color="#40666e"}
+
+## Building Blocks: Role and Objective
+
+### Setting the Context
+
+**Role:** Define the AI's persona
+
+- Helps the AI "understand" its perspective
+- Influences tone and approach
+
+**Objective:** State the overall goal
+
+- Provides purpose beyond the immediate instruction
+- Helps prioritize what matters
+
+## Example: Role & Objective
+
+### For Paper Extraction
+
+**Role:**
+
+> "You are a scientific literature extraction specialist with expertise in [domain] research."
+
+**Objective:**
+
+> "Generate a comprehensive, structured summary of the provided scientific paper optimized for literature review preparation."
+
+:::{.fragment}
+**Notice:** This adds context *around* your instructions
+:::
+
+## Why This Matters
+
+### Influencing AI Behavior
+
+Adding role and objective:
+
+- Activates relevant "knowledge" in the model
+- Sets appropriate tone and detail level
+- Provides decision-making criteria
+- Makes the task feel more bounded
+
+:::{.fragment}
+[Key point:]{.alert} You're not just saying WHAT to do, but WHO is doing it and WHY
+:::
+
+## Hands-On: Cycle 2
+
+### Your Turn - Add Role & Objective
+
+**Task:** Enhance your Cycle 1 prompt by adding:
+- An appropriate role
+- A clear objective
+
+**See:** `session-2c-hands-on.md` for guidance
+
+**Time:** 15 minutes
+
+:::{.fragment}
+**Compare:** How does the output differ from Cycle 1?
+:::
+
+---
+
+## Debrief: Cycle 2
+
+### What Changed?
+
+**Group discussion:**
+
+- How did adding role/objective affect the output?
+- Was it more aligned with what you wanted?
+- What issues persist?
+
+:::{.fragment}
+**Next challenge:** The output might be better, but is it *structured* the way you need?
+:::
+
+# Cycle 3: Output Formatting {background-color="#40666e"}
+
+## Building Block: Output Formatting
+
+### Defining Structure and Constraints
+
+**The challenge:** Even good content isn't useful if it's not structured properly
+
+:::{.fragment}
+**Output formatting specifies:**
+
+- Structure (sections, lists, tables)
+- Format (JSON, Markdown, plain text)
+- Constraints (length, level of detail)
+- Required elements
+:::
+
+## Example: Output Formatting
+
+### For Paper Extraction
+
+```
+**Format required:**
+- Title and citation information
+- Abstract (original, verbatim)
+- Key takeaways by section (bullet points)
+- Methodology summary
+- Main results with statistics
+- Figures and tables described
+- Maximum 2000 tokens
+```
+
+:::{.fragment}
+[Critical:]{.alert} Be explicit about structure - don't assume the AI will guess correctly
+:::
+
+## Why Formatting Matters
+
+### Consistency and Usability
+
+Explicit formatting requirements:
+
+- Ensure consistency across multiple papers
+- Make outputs machine-readable (if needed)
+- Enable comparison and synthesis later
+- Reduce variability in results
+
+:::{.fragment}
+**This directly addresses:** Gulf of Specification AND Gulf of Generalization
+:::
+
+## Hands-On: Cycle 3
+
+### Your Turn - Add Output Formatting
+
+**Task:** Add detailed formatting requirements to your prompt
+
+**See:** `session-2c-hands-on.md` for guidance
+
+**Time:** 20 minutes
+
+:::{.fragment}
+**Pay attention to:** How much more consistent is the output now?
+:::
+
+---
+
+## Debrief: Cycle 3
+
+### Progress Check
+
+**Group discussion:**
+
+- Is the structure now what you need?
+- Are outputs more consistent?
+- What would still improve it?
+
+:::{.fragment}
+**Pattern emerging:** More specific prompts → more consistent outputs
+:::
+
+# Cycle 4: Context & Examples {background-color="#40666e"}
+
+## Building Blocks: Context and Examples
+
+### Providing Background and Guidance
+
+**Context:** Relevant background information
+
+- Domain-specific knowledge
+- Constraints or requirements
+- What the output will be used for
+
+**Examples (Few-shot):** Sample input-output pairs
+
+- Shows exactly what you want
+- Clarifies ambiguous instructions
+- Demonstrates edge cases
+
+## When to Use Examples
+
+### The Power of Few-Shot Prompting
+
+Examples are especially valuable when:
+
+- Instructions are complex or nuanced
+- You want a specific style or format
+- Edge cases need to be handled
+- The task has implicit requirements
+
+:::{.fragment}
+**Trade-off:** Examples take up token space but can dramatically improve results
+:::
+
+## Example: Adding Context
+
+### For Paper Extraction
+
+**Context example:**
+```
+**Context:** These summaries will be used as input for 
+literature review synthesis. Focus on:
+- Quantitative results with statistical measures
+- Methodological approaches that could be compared
+- Key findings relevant to [specific research question]
+
+**Exclude:** Author affiliations, acknowledgments, 
+funding information
+```
+
+## Hands-On: Cycle 4
+
+### Your Turn - Add Context
+
+**Task:** Add relevant context to your prompt
+
+- What will the summary be used for?
+- What should be prioritized?
+- What should be excluded?
+
+**Optional:** Add an example if helpful
+
+**See:** `session-2c-hands-on.md` for guidance
+
+**Time:** 20 minutes
+
+---
+
+## Debrief: Cycle 4
+
+### Refinement Continues
+
+**Group discussion:**
+
+- Did context help focus the output?
+- If you used examples, how did they help?
+- Is the output now "good enough" for your needs?
+
+:::{.fragment}
+[Key question:]{.alert} When is a prompt "good enough"? (It depends on your use case!)
+:::
+
+# Advanced Building Blocks {background-color="#40666e"}
+
+## Reasoning Steps
+
+### Chain-of-Thought Prompting
+
+**When to use:**
+- Complex analysis tasks
+- Multi-step reasoning needed
+- Want to see the AI's thinking process
+
+**Example:** "Think step by step before answering"
+
+:::{.fragment}
+**For paper extraction:** Less critical, but useful for evaluation tasks
+:::
+
+## Delimiters
+
+### Organizing Complex Prompts
+
+**Purpose:** Clear separation of prompt sections
+
+**Common markers:** `###`, `---`, XML tags
+
+:::{.fragment}
+**For paper extraction:** Helpful as prompts grow more complex
+:::
+
+## When to Use Reasoning Steps
+
+### Chain-of-Thought Prompting
+
+Best for tasks requiring:
+
+- Multi-step analysis
+- Comparison or evaluation, complex decision-making, verification of results
+
+:::{.fragment}
+**Example for evaluation task:**
+
+> "Before rating this paper's methodology, first identify the study design, then assess each component (sampling, measurement, analysis), and finally provide an overall rating with justification."
+:::
+
+## Cycle 5 (Optional): Advanced Features
+
+### Your Choice
+
+**If time allows and interest exists:**
+
+Add reasoning steps or better organization with delimiters
+
+**See:** `session-2c-hands-on.md` for guidance
+
+**Time:** 15-20 minutes
+
+# The Complete Picture {background-color="#40666e"}
+
+## From Simple to Sophisticated
+
+### Your Prompt Evolution
+
+You've built a prompt from:
+
+1. ✅ Basic instruction
+2. ✅ + Role & Objective
+3. ✅ + Output Formatting
+4. ✅ + Context (& Examples)
+5. ✅ (Optional) Reasoning Steps & Delimiters
+
+:::{.fragment}
+**This is the iterative process** of real prompt engineering
+:::
+
+## The Professional Version
+
+### Where This Can Lead
+
+**Example:** The `prompt_paper_representation.md` shows a fully developed version
+
+- All building blocks integrated
+- Comprehensive specifications
+- Error handling
+- Quality standards
+
+:::{.fragment}
+[Important truth:]{.alert} This wasn't written perfectly from the start - it evolved through iteration
+:::
+
+## Honesty Moment
+
+### How the Example Prompt Was Created
+
+**The truth about `prompt_paper_representation.md`:**
+
+1. I built an initial version using these principles
+2. I tested it on several papers
+3. I identified failure modes
+4. **I asked Claude AI to refine it** based on my observations
+5. I tested again and refined further
+
+:::{.fragment}
+**Lesson:** Use AI to help refine prompts, but start with human-led iteration first
+:::
+
+## Why Start Manual?
+
+### The Value of Doing It Yourself First
+
+**Manual iteration first teaches you:**
+
+- What you actually want to achieve
+- Hidden requirements and edge cases
+- How to recognize failure modes
+- How to evaluate quality
+
+:::{.fragment}
+**Then AI refinement helps with:**
+
+- Phrasing and clarity
+- Comprehensive coverage
+- Formatting and organization
+:::
+
+:::{.fragment}
+[Key principle:]{.alert} Understand before you delegate
+:::
+
+# Group Comparison {background-color="#40666e"}
+
+## Sharing Our Work
+
+### What Did We Build?
+
+**Activity:** Let's see a few examples
+
+- Volunteers share their final prompts
+- What building blocks did you emphasize?
+- What worked well for your domain?
+- What challenges remain?
+
+:::{.fragment}
+**Time:** 15-20 minutes
+:::
+
+## Common Patterns
+
+### What We Typically See
+
+Across different domains and approaches:
+
+- **Variation in detail level** - Some want more, some less
+- **Domain-specific requirements** - Different fields need different information
+- **Trade-offs** - Comprehensiveness vs. token limits
+- **Personal style** - There's no single "right" prompt
+
+:::{.fragment}
+[Important insight:]{.alert} Good prompts are tailored to YOUR specific needs
+:::
+
+# Tomorrow: Evaluation {background-color="#40666e"}
+
+## The Next Challenge
+
+### How Do We Know It's Working?
+
+Today you built prompts and observed outputs.
+
+**But:**
+
+- How do you evaluate systematically?
+- What if you process 50 papers?
+- How do you identify failure patterns?
+- When is it "good enough"?
+
+:::{.fragment}
+**Tomorrow (Day 3):** We'll tackle systematic evaluation
+:::
+
+## Homework (Optional)
+
+### Continue Experimenting
+
+**If you'd like:**
+
+- Test your prompt on 2-3 different papers (or other use cases)
+- Note what works and what doesn't
+- Add observations to the shared doc
+- Try refining your prompt further
+
+:::{.fragment}
+**Question to ponder:** What would "good enough" look like for your actual research needs?
+:::
+
+# Questions & Wrap-Up {background-color="#40666e"}
+
+## Key Takeaways from Day 2
+
+### What We Learned
+
+1. **Seven building blocks** provide structure for effective prompts
+2. **Iteration is essential** - start simple, add complexity
+3. **Specificity matters** - explicit instructions reduce ambiguity
+4. **No perfect prompt** - tailor to your needs and domain
+5. **AI can help refine** - but understand the principles first
+
+:::{.fragment}
+**Tomorrow:** We'll learn how to evaluate these prompts systematically
+:::
+
+## Questions?
+
+### Before We Close
+
+- Clarifications on any building blocks?
+- Challenges with your specific use case?
+- Questions about tomorrow?
+
+:::{.fragment}
+[See you tomorrow for Day 3!]{.alert}
+:::
