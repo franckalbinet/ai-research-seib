@@ -14,6 +14,22 @@ execute:
 footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
 ---
 
+## Connecting to Yesterday
+
+### Why Learn About Training?
+
+Yesterday you experienced the Three Gulfs with real prompting challenges.
+
+Today we'll understand:
+
+- **What's actually happening** when you prompt an AI
+- **Why** certain approaches work better than others
+- **How** training stages create specific capabilities
+
+:::{.fragment}
+[This knowledge will make you]{.alert} a more effective prompt engineer
+:::
+
 # Why This Matters {background-color="#40666e"}
 
 ## The Challenge
