@@ -170,12 +170,23 @@ Researchers, graduate students, and professionals who want to:
 
 ## Presentations
 
-Available in the `presentations/` directory:
-- Course scope and philosophy
-- LLM training fundamentals
-- Prompt engineering principles
-- The Three Gulfs Model
-- Evaluation methodologies
+### Day 1
+- [Course scope and philosophy](presentations/1a-scope-and-mindset.qmd) ([PDF](presentations/1a-scope-and-mindset.pdf))
+- [The Three Gulfs Model](presentations/1d-the-three-gulfs.qmd) ([PDF](presentations/1d-the-three-gulfs.pdf))
+
+### Day 2
+- [LLM training fundamentals](presentations/2a-llm-training.qmd) ([PDF](presentations/2a-llm-training.pdf))
+- [Prompt engineering principles](presentations/2b-prompt-engineering-principles.qmd) ([PDF](presentations/2b-prompt-engineering-principles.pdf))
+
+### Day 3
+- [Why and how to evaluate LLM outputs](presentations/3a-why-and-how-to-evaluate-llm-outputs.qmd) ([PDF](presentations/3a-why-and-how-to-evaluate-llm-outputs.pdf))
+
+### Day 4
+- [Multi-paper synthesis and literature review](presentations/4a-literature-review.qmd) ([PDF](presentations/4a-literature-review.pdf))
+
+### Day 5
+- [Real-world applications and wrap-up](presentations/5a-wrap-up.qmd) ([PDF](presentations/5a-wrap-up.pdf))
+
 
 ## Getting Started with Quarto/Reveal.js
 
