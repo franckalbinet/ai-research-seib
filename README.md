@@ -6,36 +6,38 @@
 
 ## Course Overview
 
-This hands-on course explores how to effectively integrate AI and Large Language Models (LLMs) into literature review workflows. Rather than treating AI as a magic solution, we focus on developing a methodical, ethical approach that keeps researchers in control while enhancing their capabilities.
+This hands-on course explores how to effectively integrate AI and Large Language Models (LLMs) into literature review workflows. Rather than treating AI as a magic solution, we focus on developing a methodical, intentional approach that keeps researchers in control while enhancing their capabilities.
 
-### Philosophy: AI as a Learning Companion
+### Philosophy: AI as a Tool for Intentional Research
 
-- AI as a partner for better and faster learning, not a replacement for critical thinking
+- AI as a partner for systematic research, not a replacement for critical thinking
 - Focus on methodology over specific tools
 - Emphasis on evaluation, reliability, and maintaining research quality
+- Intentional approach: you drive, AI assists
 
 ## What You'll Learn
 
 ### Core Topics
 - **LLM Fundamentals**: Understanding how these systems work and why they sometimes fail
-- **Advanced Prompt Engineering**: Building effective prompts through systematic iteration
-- **Evaluation & Quality Control**: Systematic approaches to assess AI outputs using open/axial coding and LLM-as-judge methodology
-- **Research Workflows**: Organizing AI-assisted literature reviews and multi-paper synthesis
-- **IP-Aware Approaches**: Respecting copyright while leveraging AI capabilities
-- **Tools & Platforms**: Understanding different AI tools and their appropriate use cases
-- **Ethics & Detection**: Navigating journal policies and AI detection challenges
+- **Advanced Prompt Engineering**: Building effective prompts through systematic, iterative refinement
+- **Evaluation & Quality Control**: Systematic approaches using open/axial coding and LLM-as-judge methodology
+- **Multi-Paper Synthesis**: Intentional workflows for literature review with IP awareness
+- **Real-World Applications**: Case studies and adaptation to your research domain
+- **Ethics & IP Constraints**: Respecting copyright while leveraging AI capabilities
 
 ## 5-Day Schedule
 
 ### Day 1: Foundations & Initial Experience
 **Morning:**
-- Course philosophy and what makes AI effective for research
+- Course philosophy and scope
 - Tools exploration: "Who's using what?" (collaborative session)
 
 **Afternoon:**
-- First hands-on: Try paper extraction yourself (authentic struggle)
+- First hands-on: Try paper extraction yourself (authentic experience)
 - Debrief and introduction to the Three Gulfs Model
 - Collaborative discussion: expectations, concerns, and ethical considerations
+
+**Goal:** Experience challenges before learning frameworks
 
 ### Day 2: Prompt Engineering Fundamentals
 **Morning:**
@@ -43,38 +45,49 @@ This hands-on course explores how to effectively integrate AI and Large Language
 - The seven building blocks of effective prompts
 
 **Afternoon:**
-- Iterative hands-on: Build a paper extraction prompt step-by-step
+- Iterative hands-on: Build paper extraction prompt step-by-step
+- Apply each building block through cycles
 - Group comparison and discussion of different approaches
+
+**Goal:** Develop systematic paper extraction workflows
 
 ### Day 3: Evaluation Methodology
 **Morning:**
+- Why LLM evaluation is not optional
 - Evaluation methodology: open coding, axial coding, and LLM-as-judge concepts
-- Hands-on: Systematically evaluate your Day 2 prompts
 
 **Afternoon:**
+- Hands-on: Toy example (plagiarism detection)
 - Live axial coding session: analyzing patterns from shared observations
-- Key insights and preparing for synthesis work
+- Apply evaluation to your Day 2 prompts
+
+**Goal:** Move from "vibes" to systematic assessment
 
 ### Day 4: Synthesis & Hands-On Practice
 **Morning:**
+- Discussion: Your current literature review practices
 - Multi-paper synthesis prompt building with IP constraints
-- Hands-on: Apply and refine synthesis prompts with real papers
+- Live demo: 20-paper literature review workflow in SolveIt
 
 **Afternoon:**
-- Demo: 20-paper literature review workflow in SolveIt
-- Discussion: "What would you need from your tools to do this?"
+- Hands-on: Apply and refine synthesis prompts with real papers
+- Explore what's possible with your preferred tools
+
+**Goal:** Apply intentional synthesis to real literature review
 
 ### Day 5: Real-World Applications, Ethics & Future
 **Morning:**
 - Real-world case studies:
   - MARIS RAG system (Monaco): IP-aware synthesis at scale
   - IOM report evaluation: Multi-step prompts in action
-- Journal policies on AI use
+- Collaborative synthesis: Documenting our collective learning
 
 **Afternoon:**
-- Hands-on: AI detection challenge (build your own detector)
-- Collaborative framework synthesis
-- Individual consultation planning
+- Open office hours: Individual lab consultations
+- Planning AI workflows for your research
+- Next steps and 6-day support planning
+
+**Goal:** Transition from course to practice
 
 ## Course Approach
 
@@ -83,29 +96,21 @@ This hands-on course explores how to effectively integrate AI and Large Language
 - **Collaborative**: Shared documentation and group learning throughout
 - **Methodological**: Develop systematic approaches, not ad-hoc tool use
 - **Honest**: Acknowledge limitations and share real development processes
+- **Intentional**: You drive the research, AI assists
 
-## Key Frameworks
+## Course Objectives
 
-### The Three Gulfs Model
-Understanding AI system challenges through three fundamental gaps:
-- **Gulf of Comprehension**: You ↔ Your Data
-- **Gulf of Specification**: You ↔ AI Pipeline
-- **Gulf of Generalization**: Your Data ↔ AI Pipeline
+By the end of this course, you will:
 
-### The Seven Building Blocks of Prompting
-1. Role and Objective
-2. Instructions / Response Rules
-3. Context
-4. Examples (Few-shot)
-5. Reasoning Steps (Chain-of-thought)
-6. Output Formatting
-7. Delimiters
+- Understand systematic methodology for AI-assisted literature review
+- Have practical experience building and evaluating prompts
+- Know evaluation approaches: open/axial coding and LLM-as-judge
+- Understand IP-aware synthesis techniques
+- Have developed an ethical framework for AI use in research
+- Possess refined prompts for paper extraction and synthesis tailored to your domain
+- Contribute to a collaborative report documenting our collective approach
+- Have a plan for implementing AI workflows in your research (with 6 days follow-up support)
 
-## About the Instructor
-
-**Franck Albinet**  
-Independent Data Science & AI Consultant  
-Email: franckalbinet@gmail.com
 
 ## Prerequisites
 
@@ -126,11 +131,32 @@ Email: franckalbinet@gmail.com
 
 ## Materials Provided
 
+### Presentations
+- Course scope and philosophy
+- LLM training fundamentals
+- Prompt engineering principles
+- The Three Gulfs Model
+- Evaluation methodologies (open/axial coding, LLM-as-judge)
+- Multi-paper synthesis and IP constraints
+- Real-world case studies
+
+### Hands-On Guides
+- Session 1C: First paper extraction attempt
+- Session 2C: Iterative prompt building (cycles through building blocks)
+- Session 3B: Evaluation toy example (plagiarism detection)
+- Session 3C: Evaluating your own prompts
+- Session 4B: Multi-paper synthesis workflow
+
+### Reference Materials
 - Prompt engineering fundamentals guide
-- Hands-on session instructions
-- Shared documentation templates
+- Paper extraction prompt template
+- IP-aware synthesis guidelines (MARIS approach)
+- Evaluation methodology overview
+
+### Shared Resources
+- Google Docs for collaborative observations and discussions
+- Toy datasets for evaluation practice
 - Example prompts and case studies
-- Reference materials on journal policies and ethics
 
 ## Target Audience
 
@@ -140,20 +166,11 @@ Researchers, graduate students, and professionals who want to:
 - Develop reliable, ethical approaches to AI-assisted research
 - Stay in control while leveraging AI capabilities
 - Learn systematic evaluation methodologies
-
-## Collaborative Learning
-
-Throughout the course, participants contribute to shared documentation:
-- Open coding observations from hands-on exercises
-- Pain points and solutions
-- Ethical concerns and guidelines
-- Best practices and recommendations
-
-This collective knowledge will be synthesized into a collaborative framework and may contribute to future publications on AI-assisted research methodologies.
+- Apply intentional approaches to their research domains
 
 ## Presentations
 
-Available in the `presentations/` directory [wip]:
+Available in the `presentations/` directory:
 - Course scope and philosophy
 - LLM training fundamentals
 - Prompt engineering principles
@@ -179,6 +196,12 @@ This will open the presentation in your local browser with live reload.
 
 ### Converting to PDF
 Built-in print stylesheet (recommended): Quarto reveal.js presentations can be exported to PDF via a special print stylesheet. Simply add `?print-pdf` to your presentation URL, open the browser print dialog (Ctrl+P), change destination to "Save as PDF", set layout to landscape, margins to none, and enable background graphics.
+
+## About the Instructor
+
+**Franck Albinet**  
+Independent Data Science & AI Consultant  
+Email: franckalbinet@gmail.com
 
 ---
 
