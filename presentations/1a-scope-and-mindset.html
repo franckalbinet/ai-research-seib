@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="1a-scope-and-mindset_files/libs/clipboard/clipboard.min.js"></script>
+<script src="1a-scope-and-mindset_files/libs/quarto-html/tabby.min.js"></script>
+<script src="1a-scope-and-mindset_files/libs/quarto-html/popper.min.js"></script>
+<script src="1a-scope-and-mindset_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="1a-scope-and-mindset_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="1a-scope-and-mindset_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="1a-scope-and-mindset_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Franck Albinet">
+  <meta name="dcterms.date" content="2025-10-12">
+  <title>AI-Assisted Literature Review</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="1a-scope-and-mindset_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="1a-scope-and-mindset_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="1a-scope-and-mindset_files/libs/revealjs/dist/theme/quarto-5225a0b03738627c8390147651eb7bbf.css">
+  <link href="1a-scope-and-mindset_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="1a-scope-and-mindset_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="1a-scope-and-mindset_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="1a-scope-and-mindset_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+<script src="_extensions/clean/mathjax-config.js"></script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">AI-Assisted Literature Review</h1>
+  <p class="subtitle">A Systematic Approach for Research Excellence</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Franck Albinet 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:franckalbinet@gmail.com">franckalbinet@gmail.com</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Independent Data Science &amp; AI Consultant
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 12, 2025</p>
+</section>
+<section>
+<section id="welcome" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Welcome</h1>
+
+</section>
+<section id="about-this-course" class="slide level2">
+<h2>About This Course</h2>
+<h3 id="a-5-day-intensive-on-ai-assisted-research">A 5-Day Intensive on AI-Assisted Research</h3>
+<p><strong>Who this is for:</strong></p>
+<ul>
+<li>IAEA/FAO laboratory researchers</li>
+<li>Anyone conducting literature reviews</li>
+<li>Those exploring AI tools for research</li>
+<li>People wanting systematic, rigorous approaches</li>
+</ul>
+<div class="fragment">
+<p><strong>What this is NOT:</strong> A quick fix or “magic button” solution</p>
+</div>
+</section>
+<section id="what-well-build-together" class="slide level2">
+<h2>What We’ll Build Together</h2>
+<h3 id="an-intentional-approach">An Intentional Approach</h3>
+<p>This week, we’ll develop:</p>
+<ul>
+<li>Systematic paper extraction methods</li>
+<li>Rigorous evaluation practices</li>
+<li>Multi-paper synthesis workflows</li>
+<li>IP-aware research practices</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Key principle:</span> AI assists, but you drive the research process</p>
+</div>
+</section></section>
+<section>
+<section id="why-this-course-exists" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Why This Course Exists</h1>
+
+</section>
+<section id="the-literature-review-challenge" class="slide level2">
+<h2>The Literature Review Challenge</h2>
+<h3 id="what-you-face-daily">What You Face Daily</h3>
+<p><strong>Common pain points:</strong></p>
+<ul>
+<li>Reading and extracting from dozens of papers</li>
+<li>Maintaining consistency across studies</li>
+<li>Synthesizing findings into coherent narratives</li>
+<li>Keeping up with growing literature</li>
+</ul>
+<div class="fragment">
+<p><strong>Question:</strong> Does this resonate with your experience?</p>
+</div>
+</section>
+<section id="the-ai-promise" class="slide level2">
+<h2>The AI Promise</h2>
+<h3 id="what-ai-can-do">What AI Can Do</h3>
+<p><strong>AI tools can:</strong></p>
+<ul>
+<li>Process large volumes quickly</li>
+<li>Extract structured information</li>
+<li>Identify patterns across papers</li>
+<li>Draft synthesis text</li>
+</ul>
+<div class="fragment">
+<p><strong>These are powerful capabilities</strong> - but they’re not the whole picture</p>
+</div>
+</section>
+<section id="the-ai-reality" class="slide level2">
+<h2>The AI Reality</h2>
+<h3 id="what-ai-cannot-do">What AI Cannot Do</h3>
+<p><strong>AI cannot:</strong></p>
+<ul>
+<li>Replace your domain expertise</li>
+<li>Understand what matters in your field</li>
+<li>Ensure quality without evaluation</li>
+<li>Work well without careful guidance</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">You remain essential</span> - AI is a tool, not a replacement</p>
+</div>
+</section>
+<section id="our-philosophy" class="slide level2">
+<h2>Our Philosophy</h2>
+<h3 id="intentional-not-automated">Intentional, Not Automated</h3>
+<p><strong>This course teaches:</strong></p>
+<ul>
+<li>How to guide AI effectively (not just use it)</li>
+<li>How to evaluate outputs rigorously (not trust blindly)</li>
+<li>How to maintain control (not delegate thinking)</li>
+<li>How to respect IP (not copy carelessly)</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">We’re exploring together</span> - AI for research is still emerging</p>
+</div>
+</section></section>
+<section>
+<section id="the-week-ahead" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>The Week Ahead</h1>
+
+</section>
+<section id="day-1-foundations" class="slide level2">
+<h2>Day 1: Foundations</h2>
+<h3 id="understanding-the-challenges">Understanding the Challenges</h3>
+<p><strong>Today’s journey:</strong></p>
+<ul>
+<li>Experience prompting challenges firsthand</li>
+<li>Learn the Three Gulfs framework</li>
+<li>Discuss tools and current practices</li>
+<li>Share expectations and concerns</li>
+</ul>
+<div class="fragment">
+<p><strong>Goal:</strong> Understand why systematic approaches matter</p>
+</div>
+</section>
+<section id="day-2-prompt-engineering" class="slide level2">
+<h2>Day 2: Prompt Engineering</h2>
+<h3 id="building-effective-prompts">Building Effective Prompts</h3>
+<p><strong>What you’ll learn:</strong></p>
+<ul>
+<li>How LLMs are trained (and why it matters)</li>
+<li>The 7 building blocks of effective prompts</li>
+<li>Iterative prompt refinement</li>
+<li>Hands-on: Build paper extraction prompts</li>
+</ul>
+<div class="fragment">
+<p><strong>Goal:</strong> Create systematic paper extraction workflows</p>
+</div>
+</section>
+<section id="day-3-evaluation" class="slide level2">
+<h2>Day 3: Evaluation</h2>
+<h3 id="beyond-vibes">Beyond “Vibes”</h3>
+<p><strong>What you’ll learn:</strong></p>
+<ul>
+<li>Why LLM evaluation is essential</li>
+<li>Open and axial coding methods</li>
+<li>LLM-as-judge principles</li>
+<li>Hands-on: Evaluate your prompts systematically</li>
+</ul>
+<div class="fragment">
+<p><strong>Goal:</strong> Replace gut feelings with rigorous assessment</p>
+</div>
+</section>
+<section id="day-4-synthesis" class="slide level2">
+<h2>Day 4: Synthesis</h2>
+<h3 id="from-papers-to-literature-review">From Papers to Literature Review</h3>
+<p><strong>What you’ll learn:</strong></p>
+<ul>
+<li>Multi-paper synthesis approaches</li>
+<li>IP-aware synthesis requirements</li>
+<li>Intentional, iterative workflows</li>
+<li>Hands-on: Synthesize your own papers</li>
+</ul>
+<div class="fragment">
+<p><strong>Goal:</strong> Apply everything to real literature review</p>
+</div>
+</section>
+<section id="day-5-real-world-planning" class="slide level2">
+<h2>Day 5: Real-World &amp; Planning</h2>
+<h3 id="bringing-it-together">Bringing It Together</h3>
+<p><strong>What we’ll do:</strong></p>
+<ul>
+<li>See production implementations (MARIS, IOM)</li>
+<li>Collaboratively synthesize our learnings</li>
+<li>Individual lab consultations</li>
+<li>Plan your next steps</li>
+</ul>
+<div class="fragment">
+<p><strong>Goal:</strong> Transition from course to practice</p>
+</div>
+</section></section>
+<section>
+<section id="what-makes-this-different" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>What Makes This Different</h1>
+
+</section>
+<section id="not-just-tool-training" class="slide level2">
+<h2>Not Just Tool Training</h2>
+<h3 id="a-methodological-approach">A Methodological Approach</h3>
+<p><strong>Other courses might focus on:</strong></p>
+<ul>
+<li>How to use ChatGPT</li>
+<li>Prompt templates to copy</li>
+<li>“Best practices” to follow</li>
+</ul>
+</section>
+<section id="our-approach" class="slide level2">
+<h2>Our Approach</h2>
+<h3 id="what-we-aim-to-teach">What We Aim to Teach</h3>
+<p><strong>This course aims at teaching:</strong></p>
+<ul>
+<li>How to think about AI-assisted research</li>
+<li>How to develop your own approaches</li>
+<li>How to evaluate and improve systematically</li>
+<li>How to adapt to your specific needs</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Methodology over templates</span></p>
+</div>
+</section>
+<section id="collaborative-and-exploratory" class="slide level2">
+<h2>Collaborative and Exploratory</h2>
+<h3 id="were-learning-together">We’re Learning Together</h3>
+<p><strong>This course is:</strong></p>
+<ul>
+<li>First of its kind for IAEA/FAO labs (to my knowledge)</li>
+<li>Exploratory and adaptive</li>
+<li>Shaped by your feedback</li>
+<li>Contributing to new guidelines</li>
+</ul>
+<div class="fragment">
+<p><strong>Your input matters</strong> - you’re helping define best practices</p>
+</div>
+</section>
+<section id="evidence-based-methodology" class="slide level2">
+<h2>Evidence-Based Methodology</h2>
+<h3 id="built-on-research">Built on Research</h3>
+<p><strong>Our approach draws from:</strong></p>
+<ul>
+<li>The Three Gulfs Model (Shankar &amp; Husain)</li>
+<li>Qualitative research methods (open/axial coding)</li>
+<li>LLM evaluation research</li>
+<li>Real-world production systems</li>
+</ul>
+<div class="fragment">
+<p><strong>Not just opinions</strong> - grounded in methodology</p>
+</div>
+</section></section>
+<section>
+<section id="what-youll-leave-with" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>What You’ll Leave With</h1>
+
+</section>
+<section id="practical-outcomes" class="slide level2">
+<h2>Practical Outcomes</h2>
+<h3 id="tangible-skills-and-artifacts">Tangible Skills and Artifacts</h3>
+<p><strong>By Friday, you’ll have:</strong></p>
+<ul>
+<li>Paper extraction prompts for your domain</li>
+<li>Evaluation methodologies you can apply</li>
+<li>Synthesis workflows you can use</li>
+<li>A collaborative report documenting our approach</li>
+</ul>
+<div class="fragment">
+<p><strong>Plus:</strong> Follow-up support for your lab</p>
+</div>
+</section>
+<section id="mindset-shifts" class="slide level2">
+<h2>Mindset Shifts</h2>
+<h3 id="new-perspectives-on-ai-assisted-research">New Perspectives on AI-Assisted Research</h3>
+<p><strong>Working with AI systematically:</strong></p>
+<ul>
+<li>From intuitive to explicit (clarifying what we want)</li>
+<li>From single-shot to iterative (refining through cycles)</li>
+<li>From acceptance to verification (evaluating outputs)</li>
+<li>From generic to tailored (adapting to specific needs)</li>
+</ul>
+</section>
+<section id="mindset-shifts-cont." class="slide level2">
+<h2>Mindset Shifts (cont.)</h2>
+<h3 id="new-perspectives-on-research-practices">New Perspectives on Research Practices</h3>
+<p><strong>These shifts apply to research too:</strong></p>
+<ul>
+<li>More explicit about requirements</li>
+<li>More systematic in evaluation</li>
+<li>More aware of IP constraints</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Developing intentional practices</span></p>
+</div>
+</section></section>
+<section>
+<section id="what-we-need-from-you" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>What We Need From You</h1>
+
+</section>
+<section id="active-participation" class="slide level2">
+<h2>Active Participation</h2>
+<h3 id="this-is-hands-on">This Is Hands-On</h3>
+<p><strong>We ask that you:</strong></p>
+<ul>
+<li>Try the exercises (even if imperfect)</li>
+<li>Share observations openly</li>
+<li>Contribute to discussions</li>
+<li>Bring your domain expertise</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Your experience is valuable</span> - share what works and what doesn’t</p>
+</div>
+</section>
+<section id="honest-feedback" class="slide level2">
+<h2>Honest Feedback</h2>
+<h3 id="help-us-improve">Help Us Improve</h3>
+<p><strong>Throughout the week:</strong></p>
+<ul>
+<li>Add observations to shared docs</li>
+<li>Ask questions when unclear</li>
+<li>Challenge assumptions</li>
+<li>Suggest improvements</li>
+</ul>
+<div class="fragment">
+<p><strong>This is exploratory</strong> - your feedback shapes the approach</p>
+</div>
+</section>
+<section id="patience-and-flexibility" class="slide level2">
+<h2>Patience and Flexibility</h2>
+<h3 id="were-figuring-this-out-together">We’re Figuring This Out Together</h3>
+<p><strong>Expect:</strong></p>
+<ul>
+<li>Some improvisation</li>
+<li>Schedule adjustments</li>
+<li>Iterative refinement</li>
+<li>Ongoing discussion</li>
+</ul>
+<div class="fragment">
+<p><strong>This isn’t polished</strong> - it’s authentic exploration</p>
+</div>
+</section></section>
+<section>
+<section id="practical-matters" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Practical Matters</h1>
+
+</section>
+<section id="what-you-need" class="slide level2">
+<h2>What You Need</h2>
+<h3 id="tools-and-access">Tools and Access</h3>
+<p><strong>You should have:</strong></p>
+<ul>
+<li>A laptop with internet access</li>
+<li>Access to AI tools (Copilot Pro provided)</li>
+<li>2-3 papers from your research domain</li>
+<li>Willingness to experiment</li>
+</ul>
+<div class="fragment">
+<p><strong>Optional but helpful:</strong></p>
+<ul>
+<li>ChatGPT/Claude accounts</li>
+<li>NotebookLM access</li>
+<li>Other AI tools you use</li>
+</ul>
+</div>
+</section>
+<section id="shared-resources" class="slide level2">
+<h2>Shared Resources</h2>
+<h3 id="collaborative-documents">Collaborative Documents</h3>
+<p><strong>We’ll use:</strong></p>
+<ul>
+<li>Google Docs for observations and discussions</li>
+<li>Shared folders for materials</li>
+<li>Links provided as we go</li>
+</ul>
+<div class="fragment">
+<p><strong>Everything will be accessible</strong> - don’t worry about taking detailed notes</p>
+</div>
+</section>
+<section id="schedule-flexibility" class="slide level2">
+<h2>Schedule Flexibility</h2>
+<h3 id="built-in-adaptation">Built-In Adaptation</h3>
+<p><strong>Each day:</strong></p>
+<ul>
+<li>Core content in morning</li>
+<li>Hands-on practice in afternoon</li>
+<li>Buffer time for questions</li>
+<li>Responsive to your needs</li>
+</ul>
+<div class="fragment">
+<p><strong>If something isn’t working</strong> - we’ll adjust</p>
+</div>
+</section></section>
+<section>
+<section id="setting-expectations" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Setting Expectations</h1>
+
+</section>
+<section id="what-this-course-will-do" class="slide level2">
+<h2>What This Course Will Do</h2>
+<h3 id="realistic-goals">Realistic Goals</h3>
+<p><strong>You will:</strong></p>
+<ul>
+<li>Understand systematic AI-assisted research</li>
+<li>Build foundational prompts and workflows</li>
+<li>Learn evaluation methodologies</li>
+<li>See real-world applications</li>
+</ul>
+<div class="fragment">
+<p><strong>You’ll have a strong foundation</strong> to continue developing</p>
+</div>
+</section>
+<section id="what-this-course-wont-do" class="slide level2">
+<h2>What This Course Won’t Do</h2>
+<h3 id="honest-limitations">Honest Limitations</h3>
+<p><strong>You won’t:</strong></p>
+<ul>
+<li>Become an AI expert in 5 days</li>
+<li>Get perfect prompts that always work</li>
+<li>Eliminate all manual review</li>
+<li>Have all answers to all questions</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">This is the beginning</span> - not the complete solution</p>
+</div>
+</section>
+<section id="the-learning-curve" class="slide level2">
+<h2>The Learning Curve</h2>
+<h3 id="what-to-expect---week-1">What to Expect - Week 1</h3>
+<p><strong>This week (the course):</strong></p>
+<ul>
+<li>Understanding and foundation</li>
+<li>Experimentation and practice</li>
+<li>Some frustration (normal!)</li>
+<li>Emerging clarity</li>
+</ul>
+</section>
+<section id="the-learning-curve-cont." class="slide level2">
+<h2>The Learning Curve (cont.)</h2>
+<h3 id="what-to-expect---by-december-2025">What to Expect - by December 2025</h3>
+<p><strong>Follow-up support period:</strong></p>
+<ul>
+<li>Application to your work</li>
+<li>Troubleshooting real cases</li>
+<li>Refinement and improvement</li>
+<li>Growing confidence</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Learning continues beyond this week</span></p>
+</div>
+</section></section>
+<section>
+<section id="questions-discussion" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Questions &amp; Discussion</h1>
+
+</section>
+<section id="before-we-dive-in" class="slide level2">
+<h2>Before We Dive In</h2>
+<h3 id="whats-on-your-mind">What’s On Your Mind?</h3>
+<p><strong>Common questions:</strong></p>
+<ul>
+<li>“Will this really save time?”</li>
+<li>“What if I don’t know much about AI?”</li>
+<li>“How does this fit my current workflow?”</li>
+<li>“What about data privacy/security?”</li>
+</ul>
+<div class="fragment">
+<p><strong>Let’s discuss</strong> - what concerns or questions do you have?</p>
+</div>
+</section>
+<section id="your-expectations" class="slide level2">
+<h2>Your Expectations</h2>
+<h3 id="what-do-you-hope-to-gain">What Do You Hope to Gain?</h3>
+<p><strong>Take a moment to think:</strong></p>
+<ul>
+<li>What brought you here?</li>
+<li>What would make this week valuable?</li>
+<li>What specific challenges do you face?</li>
+<li>What would success look like?</li>
+</ul>
+<div class="fragment">
+<p><strong>We’ll capture these</strong> in our shared discussion later today</p>
+</div>
+</section></section>
+<section>
+<section id="lets-begin" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Let’s Begin</h1>
+
+</section>
+<section id="the-journey-starts-now" class="slide level2">
+<h2>The Journey Starts Now</h2>
+<h3 id="next-steps">Next Steps</h3>
+<p><strong>Coming up:</strong></p>
+<ul>
+<li>Session 1B: Tools and setup</li>
+<li>Session 1C: First hands-on (try it yourself!)</li>
+<li>Session 1D: The Three Gulfs framework</li>
+<li>Session 1E: Collaborative discussion</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">Ready to explore?</span></p>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Use of AI for Literature Review course, IAEA/FAO Laboratories, Seibersdorf, Austria, September 2025.</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="1a-scope-and-mindset_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

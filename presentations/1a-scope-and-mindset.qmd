@@ -1,6 +1,6 @@
 ---
-title: "Use of AI for Literature Review"
-subtitle: "Course Overview and Philosophy"
+title: "AI-Assisted Literature Review"
+subtitle: "A Systematic Approach for Research Excellence"
 format:
   clean-revealjs:
     self-contained: true
@@ -8,262 +8,485 @@ author:
   - name: Franck Albinet
     email: franckalbinet@gmail.com
     affiliation: "Independent Data Science & AI Consultant"
-#   - name: Kyle Butts
-#     orcid: 0000-0002-9048-8059
-#     email: kbutts@uark.edu
-#     affiliations: U of Arkansas
 date: last-modified
-bibliography: refs.bib
 execute:
   eval: false
-footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
+footer: "Use of AI for Literature Review course, IAEA/FAO Laboratories, Seibersdorf, Austria, September 2025."
 ---
 
-# Why this course? {background-color="#40666e"}
+# Welcome {background-color="#40666e"}
 
-## The Current Landscape
+## About This Course
 
-### AI & LLM: Between Hype and Reality
+### A 5-Day Intensive on AI-Assisted Research
 
-- **The buzz:** Revolutionary promises for research and productivity
-- **The reality:** Mixed experiences, from enthusiasm to frustration
-- **The concerns:** Quality, reliability, intellectual property, ethics
+**Who this is for:**
 
-:::{.fragment}
-[The AI design space is vast]{.alert} - many approaches, tools, and philosophies
-:::
-
-## The Challenge
-
-### A Dynamic and Complex Domain
-
-- New model classes emerging every few months
-- Overwhelming choice of tools and platforms
-- Need for clarity on what's actually happening "under the hood"
+- IAEA/FAO laboratory researchers
+- Anyone conducting literature reviews
+- Those exploring AI tools for research
+- People wanting systematic, rigorous approaches
 
 :::{.fragment}
-**AI is a flexible tool** - but like any tool, it needs:
-
-- Clear purpose
-- Awareness of capabilities and limitations
-- Thoughtful application to your specific needs
+**What this is NOT:** A quick fix or "magic button" solution
 :::
 
-# How we'll approach this {background-color="#40666e"}
+## What We'll Build Together
+
+### An Intentional Approach
+
+This week, we'll develop:
+
+- Systematic paper extraction methods
+- Rigorous evaluation practices
+- Multi-paper synthesis workflows
+- IP-aware research practices
+
+:::{.fragment}
+[Key principle:]{.alert} AI assists, but you drive the research process
+:::
+
+# Why This Course Exists {background-color="#40666e"}
+
+## The Literature Review Challenge
+
+### What You Face Daily
+
+**Common pain points:**
+
+- Reading and extracting from dozens of papers
+- Maintaining consistency across studies
+- Synthesizing findings into coherent narratives
+- Keeping up with growing literature
+
+:::{.fragment}
+**Question:** Does this resonate with your experience?
+:::
+
+## The AI Promise
+
+### What AI Can Do
+
+**AI tools can:**
+
+- Process large volumes quickly
+- Extract structured information
+- Identify patterns across papers
+- Draft synthesis text
+
+:::{.fragment}
+**These are powerful capabilities** - but they're not the whole picture
+:::
+
+
+## The AI Reality
+
+### What AI Cannot Do
+
+**AI cannot:**
+
+- Replace your domain expertise
+- Understand what matters in your field
+- Ensure quality without evaluation
+- Work well without careful guidance
+
+:::{.fragment}
+[You remain essential]{.alert} - AI is a tool, not a replacement
+:::
+
 
 ## Our Philosophy
 
-### AI as a Learning Companion
+### Intentional, Not Automated
 
-- **Not** a tool for delegating cognition
-- **But** a partner for better and faster learning
-- Goal: [Stay in control]{.alert} while enhancing our capabilities
+**This course teaches:**
 
-:::{.fragment}
-**Counter-intuitive insight:** AI saves time on boring tasks, but you'll spend *more* time on tasks you love - and do them better
-:::
-
-## Course Structure
-
-### Interactive and Hands-On Approach
-
-:::: {.columns}
-
-::: {.column width="50%"}
-**Short lectures**
-
-- Just enough theory
-- Focus on methodology over tools
-:::
-
-::: {.column width="50%"}
-**Collaborative sessions**
-
-- Capture pain points & expectations
-- Share experiences
-- Build collective knowledge
-:::
-
-::::
+- How to guide AI effectively (not just use it)
+- How to evaluate outputs rigorously (not trust blindly)
+- How to maintain control (not delegate thinking)
+- How to respect IP (not copy carelessly)
 
 :::{.fragment}
-**Extensive hands-on practice** - because understanding comes through doing
+[We're exploring together]{.alert} - AI for research is still emerging
 :::
 
-# What we'll cover {background-color="#40666e"}
+# The Week Ahead {background-color="#40666e"}
 
-## 5-Day Journey
+## Day 1: Foundations
 
-### Day 1: Foundations & Getting Started
-- Course overview and philosophy
-- How LLMs are trained (high-level intuition)
-- **Collaborative session:** Expectations, fears, ethical concerns
-- **Introduction to prompt engineering** for scientific papers
+### Understanding the Challenges
 
-### Day 2: Deep Dive into Prompting
-- **Morning:** Advanced prompt engineering techniques
-- Data extraction and summarization
-- **Hands-on practice:** Working with real papers
+**Today's journey:**
 
-## 5-Day Journey (cont.)
-
-### Day 3: Methodology & Workflows
-- Literature review workflows and organization
-- LLM evaluation and iterative improvement
-- **Collaborative session:** Pain points and solutions
-
-### Day 4: Tools & Advanced Applications
-- Tools comparison: mindsets and approaches
-- RAG systems (IAEA Monaco example)
-- Agentic literature review approaches
-
-## 5-Day Journey (final)
-
-### Day 5: Integration & Future
-- **Collaborative synthesis:** Building our methodological framework
-- Intellectual property and ethical guidelines
-- Individual consultation planning
-
-# Topics in Detail {background-color="#40666e"}
-
-## LLM Fundamentals
-
-### Understanding What's Under the Hood
-
-- How are LLMs trained? (High-level intuition)
-- Why do they work? Why do they sometimes fail?
-- **The three gulfs of AI system design:**
-  - Gulf of understanding
-  - Gulf of specification  
-  - Gulf of generalization
+- Experience prompting challenges firsthand
+- Learn the Three Gulfs framework
+- Discuss tools and current practices
+- Share expectations and concerns
 
 :::{.fragment}
-[Key insight:]{.alert} Understanding the fundamentals helps you use AI more effectively
+**Goal:** Understand why systematic approaches matter
 :::
 
-## Prompt Engineering
+## Day 2: Prompt Engineering
 
-### From Basic to Advanced Techniques
+### Building Effective Prompts
 
-- Summarizing scientific papers effectively
-- Data extraction with precision and consistency
-- **IP-aware prompting** (IAEA Monaco case study)
-- Iterative refinement and evaluation
+**What you'll learn:**
+
+- How LLMs are trained (and why it matters)
+- The 7 building blocks of effective prompts
+- Iterative prompt refinement
+- Hands-on: Build paper extraction prompts
 
 :::{.fragment}
-**Hands-on focus:** You'll practice with real papers from your domains
+**Goal:** Create systematic paper extraction workflows
 :::
 
-## Evaluation & Iterative Improvement
+## Day 3: Evaluation
 
-### Making AI Work Reliably for Research
+### Beyond "Vibes"
 
-- **LLM as a judge:** How to evaluate AI outputs systematically
-- Error analysis and failure mode identification
-- Iterative improvement cycles
-- Simple evaluation tools (Excel-based approaches)
+**What you'll learn:**
+
+- Why LLM evaluation is essential
+- Open and axial coding methods
+- LLM-as-judge principles
+- Hands-on: Evaluate your prompts systematically
 
 :::{.fragment}
-[Central principle:]{.alert} Evaluation is not optional - it's essential for research quality
+**Goal:** Replace gut feelings with rigorous assessment
 :::
 
-## Literature Review Workflows
+## Day 4: Synthesis
 
-### Systematic Approaches to AI-Assisted Research
+### From Papers to Literature Review
 
-- Crafting effective LLM context for literature review
-- Organizing and maintaining consistency over time
-- Collaborative research strategies
-- **From overwhelmed to organized**
+**What you'll learn:**
+
+- Multi-paper synthesis approaches
+- IP-aware synthesis requirements
+- Intentional, iterative workflows
+- Hands-on: Synthesize your own papers
 
 :::{.fragment}
-**Real challenge:** How do we stay in control while leveraging AI capabilities?
+**Goal:** Apply everything to real literature review
 :::
 
-## Tools & Mindsets
+## Day 5: Real-World & Planning
 
-### Beyond the Hype: Choosing the Right Approach
+### Bringing It Together
 
-- **Copilot vs. ChatGPT vs. Claude vs. DeepSeek**
-- Platform comparison: NotebookLM, Elicit, specialized research tools
-- **The SolveIt approach:** Maintaining control and transparency
-- Agentic AI vs. collaborative AI philosophies
+**What we'll do:**
+
+- See production implementations (MARIS, IOM)
+- Collaboratively synthesize our learnings
+- Individual lab consultations
+- Plan your next steps
 
 :::{.fragment}
-[Key question:]{.alert} What mindset and level of control do you want?
+**Goal:** Transition from course to practice
 :::
 
-## Advanced Applications
+# What Makes This Different {background-color="#40666e"}
 
-### Real-World Implementation Examples
+## Not Just Tool Training
 
-- **RAG systems:** IAEA Monaco marine radioactivity database
-- Agentic literature review demonstrations
-- Scaling from individual papers to comprehensive reviews
-- Integration with existing research workflows
+### A Methodological Approach
+
+**Other courses might focus on:**
+
+- How to use ChatGPT
+- Prompt templates to copy
+- "Best practices" to follow
+
+## Our Approach
+
+### What We Aim to Teach
+
+**This course aims at teaching:**
+
+- How to think about AI-assisted research
+- How to develop your own approaches
+- How to evaluate and improve systematically
+- How to adapt to your specific needs
 
 :::{.fragment}
-**Live demos:** See these approaches in action with real research scenarios
+[Methodology over templates]{.alert}
 :::
 
-## Ethical & Epistemological Questions
+## Collaborative and Exploratory
 
-### The Big Questions We Must Address
+### We're Learning Together
 
-- **What do we expect from AI in research?**
-- What should we delegate vs. what should we keep?
-- Will AI help us do *better* research, or just *faster* research?
-- **Authorship and attribution:** New challenges, new solutions
+**This course is:**
+
+- First of its kind for IAEA/FAO labs (to my knowledge)
+- Exploratory and adaptive
+- Shaped by your feedback
+- Contributing to new guidelines
 
 :::{.fragment}
-**Intellectual Property considerations:**
-
-- Copyright and fair use in AI-assisted research
-- Institutional policies and journal guidelines
-- Data ownership and sharing protocols
+**Your input matters** - you're helping define best practices
 :::
 
-## Collaborative Framework Building
+## Evidence-Based Methodology
 
-### Creating Our Methodological Approach
+### Built on Research
 
-- Synthesizing our collective insights and concerns
-- Building practical guidelines for AI use in research
-- **Goal:** A methodological document we can all use
-- Individual consultation opportunities (6 additional days available)
+**Our approach draws from:**
+
+- The Three Gulfs Model (Shankar & Husain)
+- Qualitative research methods (open/axial coding)
+- LLM evaluation research
+- Real-world production systems
 
 :::{.fragment}
-[Our aim:]{.alert} Leave with a clear, ethical, and effective approach to AI in your research
+**Not just opinions** - grounded in methodology
 :::
 
-## Demo Preview
+# What You'll Leave With {background-color="#40666e"}
 
-### A Taste of What's Possible
+## Practical Outcomes
 
-Let's see AI-assisted literature review in action:
+### Tangible Skills and Artifacts
 
-- **Live demonstration:** From research question to synthesized insights
-- Real scientific papers, real workflows
-- Multiple AI approaches compared side-by-side
+**By Friday, you'll have:**
+
+- Paper extraction prompts for your domain
+- Evaluation methodologies you can apply
+- Synthesis workflows you can use
+- A collaborative report documenting our approach
 
 :::{.fragment}
-**What you'll notice:**
+**Plus:** Follow-up support for your lab
+:::
 
-- The importance of good prompting
-- How evaluation catches errors
-- Why methodology matters more than tools
+## Mindset Shifts
+
+### New Perspectives on AI-Assisted Research
+
+**Working with AI systematically:**
+
+- From intuitive to explicit (clarifying what we want)
+- From single-shot to iterative (refining through cycles)
+- From acceptance to verification (evaluating outputs)
+- From generic to tailored (adapting to specific needs)
+
+## Mindset Shifts (cont.)
+
+### New Perspectives on Research Practices
+
+**These shifts apply to research too:**
+
+- More explicit about requirements
+- More systematic in evaluation
+- More aware of IP constraints
+
+:::{.fragment}
+[Developing intentional practices]{.alert}
+:::
+
+# What We Need From You {background-color="#40666e"}
+
+## Active Participation
+
+### This Is Hands-On
+
+**We ask that you:**
+
+- Try the exercises (even if imperfect)
+- Share observations openly
+- Contribute to discussions
+- Bring your domain expertise
+
+:::{.fragment}
+[Your experience is valuable]{.alert} - share what works and what doesn't
+:::
+
+## Honest Feedback
+
+### Help Us Improve
+
+**Throughout the week:**
+
+- Add observations to shared docs
+- Ask questions when unclear
+- Challenge assumptions
+- Suggest improvements
+
+:::{.fragment}
+**This is exploratory** - your feedback shapes the approach
+:::
+
+## Patience and Flexibility
+
+### We're Figuring This Out Together
+
+**Expect:**
+
+- Some improvisation
+- Schedule adjustments
+- Iterative refinement
+- Ongoing discussion
+
+:::{.fragment}
+**This isn't polished** - it's authentic exploration
+:::
+
+# Practical Matters {background-color="#40666e"}
+
+## What You Need
+
+### Tools and Access
+
+**You should have:**
+
+- A laptop with internet access
+- Access to AI tools (Copilot Pro provided)
+- 2-3 papers from your research domain
+- Willingness to experiment
+
+:::{.fragment}
+**Optional but helpful:**
+
+- ChatGPT/Claude accounts
+- NotebookLM access
+- Other AI tools you use
+:::
+
+## Shared Resources
+
+### Collaborative Documents
+
+**We'll use:**
+
+- Google Docs for observations and discussions
+- Shared folders for materials
+- Links provided as we go
+
+:::{.fragment}
+**Everything will be accessible** - don't worry about taking detailed notes
+:::
+
+## Schedule Flexibility
+
+### Built-In Adaptation
+
+**Each day:**
+
+- Core content in morning
+- Hands-on practice in afternoon
+- Buffer time for questions
+- Responsive to your needs
+
+:::{.fragment}
+**If something isn't working** - we'll adjust
+:::
+
+# Setting Expectations {background-color="#40666e"}
+
+## What This Course Will Do
+
+### Realistic Goals
+
+**You will:**
+
+- Understand systematic AI-assisted research
+- Build foundational prompts and workflows
+- Learn evaluation methodologies
+- See real-world applications
+
+:::{.fragment}
+**You'll have a strong foundation** to continue developing
+:::
+
+## What This Course Won't Do
+
+### Honest Limitations
+
+**You won't:**
+
+- Become an AI expert in 5 days
+- Get perfect prompts that always work
+- Eliminate all manual review
+- Have all answers to all questions
+
+:::{.fragment}
+[This is the beginning]{.alert} - not the complete solution
+:::
+
+## The Learning Curve
+
+### What to Expect - Week 1
+
+**This week (the course):**
+
+- Understanding and foundation
+- Experimentation and practice
+- Some frustration (normal!)
+- Emerging clarity
+
+
+## The Learning Curve (cont.)
+
+### What to Expect - by December 2025
+
+**Follow-up support period:**
+
+- Application to your work
+- Troubleshooting real cases
+- Refinement and improvement
+- Growing confidence
+
+:::{.fragment}
+[Learning continues beyond this week]{.alert}
 :::
 
 # Questions & Discussion {background-color="#40666e"}
 
-## Ready to Begin?
+## Before We Dive In
 
-### Your Turn
+### What's On Your Mind?
 
-- What are your biggest hopes for AI in your research?
-- What concerns you most about using AI tools?
-- What specific literature review challenges do you face?
+**Common questions:**
+
+- "Will this really save time?"
+- "What if I don't know much about AI?"
+- "How does this fit my current workflow?"
+- "What about data privacy/security?"
 
 :::{.fragment}
-[Let's start the conversation]{.alert} - this course is as much about your insights as mine
+**Let's discuss** - what concerns or questions do you have?
+:::
+
+## Your Expectations
+
+### What Do You Hope to Gain?
+
+**Take a moment to think:**
+
+- What brought you here?
+- What would make this week valuable?
+- What specific challenges do you face?
+- What would success look like?
+
+:::{.fragment}
+**We'll capture these** in our shared discussion later today
+:::
+
+# Let's Begin {background-color="#40666e"}
+
+## The Journey Starts Now
+
+### Next Steps
+
+**Coming up:**
+
+- Session 1B: Tools and setup
+- Session 1C: First hands-on (try it yourself!)
+- Session 1D: The Three Gulfs framework
+- Session 1E: Collaborative discussion
+
+:::{.fragment}
+[Ready to explore?]{.alert}
 :::
