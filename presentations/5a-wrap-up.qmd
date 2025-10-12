@@ -1,0 +1,324 @@
+---
+title: "Day 5: Real-World Applications & Moving Forward"
+subtitle: "From Learning to Practice"
+format:
+  clean-revealjs:
+    self-contained: true
+author:
+  - name: Franck Albinet
+    email: franckalbinet@gmail.com
+    affiliation: "Independent Data Science & AI Consultant"
+date: last-modified
+execute:
+  eval: false
+footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
+---
+
+# Welcome to Day 5 {background-color="#40666e"}
+
+## The Week's Journey
+
+### What We've Built Together
+
+**Day 1:** Experienced the challenges, discovered the Three Gulfs
+
+**Day 2:** Learned systematic prompt engineering
+
+**Day 3:** Mastered evaluation methodology
+
+**Day 4:** Applied synthesis to real literature review
+
+:::{.fragment}
+**Today:** Bringing it all together and planning your next steps
+:::
+
+## Today's Objectives
+
+### A Different Kind of Day
+
+**This morning:**
+
+- See real-world implementations
+- Collaboratively synthesize what we've learned
+- Document our collective insights
+
+---
+
+## Today's Objectives (cont.)
+
+### A Different Kind of Day
+
+**This afternoon:**
+
+- Individual lab consultations (open office hours)
+- Planning your AI-assisted research workflows
+- Wrapping up loose ends
+
+:::{.fragment}
+[Today is about transition:]{.alert} From course to practice
+:::
+
+# Our Approach Today {background-color="#40666e"}
+
+## Why Day 5 Is Different
+
+### Flexible and Responsive
+
+**We've intentionally kept today open because:**
+
+- You might need more time on Day 4 topics
+- Questions and discussions may have emerged
+- Each lab has unique needs
+- Real learning happens in application
+
+:::{.fragment}
+**Our philosophy:** Respond to where YOU are, not a rigid schedule
+:::
+
+## This Week Is Exploratory
+
+### Shaping Something New Together
+
+**Why this course is different:**
+
+- AI for literature review is still emerging
+- We're figuring out best practices together
+- Your feedback shapes the approach
+- No "right answers" yet - we're exploring
+
+---
+
+## Contributing Together
+
+### What This Week Enables
+
+**Through this course:**
+
+- Share how AI tools work in your domains
+- Contribute to IAEA/FAO lab guidelines
+- Help document what works (and what doesn't)
+
+:::{.fragment}
+[We're all learning together]{.alert}
+:::
+
+# Morning Sessions {background-color="#40666e"}
+
+## Real-World Case Studies
+
+### What's Possible at Scale
+
+**Two implementations I'll share:**
+
+1. **MARIS RAG System (IAEA Monaco)**
+   - IP-aware synthesis at scale
+   - Synthetic question generation for evaluation
+
+## Real-World Case Studies (cont.)
+
+### What's Possible at Scale
+
+**2. IOM Evidence Gap Mapping**
+
+   - Multi-step LLM prompts
+   - Evaluating reports against frameworks
+
+:::{.fragment}
+**Goal:** Show principles from this week applied in production
+:::
+
+## Why Show These?
+
+### Learning from Real Implementations
+
+**These examples demonstrate:**
+
+- How evaluation scales in practice
+- IP compliance in production systems
+- Multi-step workflows
+- Custom tooling when needed
+- Lessons learned from deployment
+
+## Collaborative Synthesis
+
+### Capturing Our Collective Learning
+
+**What I did last night:**
+
+- Pulled all your Google doc contributions
+- Used SolveIt to synthesize themes and patterns
+- Drafted initial structure and sections
+
+:::{.fragment}
+**This morning:**
+
+- I'll share what emerged
+- We'll refine it together
+- You'll see the synthesis workflow in action
+:::
+
+## Why This Matters
+
+### You're Co-Authors of Knowledge
+
+**This synthesis will:**
+
+- Document your insights and challenges
+- Capture methodology we developed together
+- Create guidelines for IAEA/FAO labs
+- Potentially become a publication??
+
+
+# The Synthesis Process {background-color="#40666e"}
+
+## What I Did Thursday Evening
+
+### From Raw Notes to Structure
+
+**The workflow:**
+
+1. **Collected** all Google doc observations (Days 1-4)
+2. **Loaded** into SolveIt as context
+3. **Identified** themes and patterns
+4. **Drafted** initial sections
+5. **Prepared** for your feedback
+
+:::{.fragment}
+**This is exactly the process** we discussed in Day 4!
+:::
+
+## What We'll Do Together
+
+### Collaborative Refinement
+
+**This morning's session:**
+
+1. **I'll present** the draft synthesis
+2. **You'll react:** Does this capture your experience?
+3. **We'll refine:** What's missing? What's wrong?
+4. **We'll decide:** What should this become?
+
+:::{.fragment}
+**Improvised but intentional** - just like real research synthesis
+:::
+
+## Potential Outputs
+
+### What This Could Become
+
+**Possible formats:**
+
+- **Internal guidelines:** AI-assisted literature review for IAEA/FAO
+- **Methodology paper:** Novel approach to research synthesis
+- **Training materials:** For other institutions
+- **All/None of the above?**
+
+
+# Afternoon: Individual Consultations {background-color="#40666e"}
+
+## Open "Office Hours"
+
+### Tailored Support per Lab
+
+**How this works:**
+
+- Contact me as you need help
+- Discuss your specific use cases
+- Plan AI workflows for your research
+- Get guidance on next steps
+
+
+## What We Can Discuss
+
+### Possible Topics
+
+- Specific prompts for your domain
+- Tool selection for your constraints
+- Evaluation strategies for your use cases
+- Integration with current workflows
+
+:::{.fragment}
+**Or anything else** that would help you move forward
+:::
+
+## Why Keep It Open?
+
+### Learning from Experience
+
+**From past workshops:**
+
+- Some labs come with clear questions
+- Others need time to process
+- Forcing structure doesn't help
+- Best support is responsive
+
+
+# What Happens After Today? {background-color="#40666e"}
+
+## The Support Plan
+
+### Continuing the Journey
+
+**After this week:**
+
+- Individual lab support (6 days total, shared across all labs)
+- Help implementing what you learned
+- Troubleshooting real applications
+- Ongoing refinement
+
+
+## The Synthesis Document
+
+### Ongoing Collaboration
+
+**After today:**
+
+- I'll share the refined draft
+- You can contribute asynchronously
+- We'll iterate based on feedback
+- Decide final format together
+
+# Today's Schedule {background-color="#40666e"}
+
+## Morning Timeline
+
+### Real-World + Synthesis
+
+**Sequence:**
+
+1. Real-world case studies (MARIS, IOM)
+2. Break
+3. Collaborative synthesis session
+
+:::{.fragment}
+**Timing flexible** - we'll adjust based on discussion and questions
+:::
+
+# Questions Before We Start? {background-color="#40666e"}
+
+## Setting Expectations
+
+### What to Know
+
+- Today is less structured by design
+- Your participation shapes the day
+- Focus on practical application
+- Think about your next steps
+
+:::{.fragment}
+**Any questions about:**
+
+- Today's agenda?
+- The synthesis session?
+- Individual consultations?
+- What happens after?
+:::
+
+## Let's Begin
+
+### First: Real-World Case Studies
+
+**Coming up:**
+
+- MARIS RAG (Monaco)
+- IOM Evidence Gap Mapping
