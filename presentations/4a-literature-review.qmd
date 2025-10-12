@@ -1,0 +1,482 @@
+---
+title: "Multi-Paper Synthesis & Literature Review"
+subtitle: "From Extraction to Synthesis - An Intentional Approach"
+format:
+  clean-revealjs:
+    self-contained: true
+author:
+  - name: Franck Albinet
+    email: franckalbinet@gmail.com
+    affiliation: "Independent Data Science & AI Consultant"
+date: last-modified
+execute:
+  eval: false
+footer: "Use of AI for Literature Review course, IAEA Laboratories, Seibersdorf, Austria, September 2025."
+---
+
+# Welcome to Day 4 {background-color="#40666e"}
+
+## Where We've Been
+
+### Your Journey So Far
+
+**Day 1:** Experienced the challenges, learned the Three Gulfs
+
+**Day 2:** Built extraction prompts systematically
+
+**Day 3:** Learned to evaluate rigorously
+
+:::{.fragment}
+**Today:** Putting it all together for real literature review work
+:::
+
+## Today's Focus
+
+### From Single Papers to Synthesis
+
+**The central challenge:**
+
+- You've extracted information from individual papers
+- But literature review requires **synthesis** across papers
+- Finding connections, patterns, gaps
+- Creating coherent narrative
+
+:::{.fragment}
+[This is what you actually need for your work!]{.alert}
+:::
+
+## Before We Start
+
+### Opening Discussion + Shared Doc
+
+**First, we want to hear from YOU:**
+
+- Your current literature review practices
+- What's challenging about synthesis
+- What tools you use
+
+:::{.fragment}
+**Please contribute to our [shared doc](https://docs.google.com/document/d/1ub6KZBYAOBVYRXI5P3UX7xjSgwChOxwonWWgbidUOr0/edit?tab=t.0)**
+:::
+
+:::{.fragment}
+**Then:** We'll show you one approach and extract principles together
+:::
+
+# Your Current Practice {background-color="#40666e"}
+
+## What You Told Us
+
+### Common Themes from Discussion
+
+[Summarize 3-4 key points from their opening discussion]
+
+- Pain point 1: [from your input]
+- Pain point 2: [from your input]
+- Challenge: [from your input]
+- Wish: [from your input]
+
+:::{.fragment}
+**Let's see one approach to addressing these challenges**
+:::
+
+# A Real-World Example {background-color="#40666e"}
+
+## The Project
+
+### Writing a Book Chapter with IAEA Colleague
+
+**The task:**
+
+- Chapter on banana, cassava, and coffee isotope research
+- 20+ reference papers to synthesize
+- Specific audience and style requirements
+- Must respect IP/copyright constraints
+
+:::{.fragment}
+**The approach:** Intentional, iterative, AI-assisted synthesis
+:::
+
+## What "Intentional" Means
+
+### Not Just Throwing Papers at AI
+
+**Intentional synthesis requires:**
+
+- Carefully crafted context
+- Clear specifications
+- Iterative refinement
+- Human guidance and control
+
+:::{.fragment}
+[Key insight:]{.alert} You can't just prompt "write my literature review" and expect quality
+:::
+
+# Live Demo: The Workflow {background-color="#40666e"}
+
+## What We'll Show
+
+### Four Key Aspects
+
+1. **Crafted context** - The preparation work
+2. **Pooling context** - Dynamic information retrieval
+3. **Steering through editing** - Driving the AI
+4. **Iteration** - The reality of the process
+
+:::{.fragment}
+**Tool:** SolveIt (advanced features, but principles transfer)
+:::
+
+## [Live Demo Part 1]
+
+### The Preparation: Crafted Context
+
+**Before starting synthesis:**
+
+- Book/chapter TOC and outline
+- 20+ papers pre-extracted (Day 2 methods)
+- Style calibration document
+- IP requirements specified
+
+:::{.fragment}
+**This preparation enables quality synthesis**
+:::
+
+## Why This Preparation Matters
+### Precision and Recall for Synthesis
+
+**Information retrieval concepts apply here:**
+
+- **Recall:** Did we capture all relevant information from papers?
+- **Precision:** Is the information we provide actually useful?
+
+:::{.fragment}
+**Good context = High recall + High precision**
+
+- Extract comprehensively (Day 2 methods)
+- Filter to what's relevant for this synthesis
+:::
+
+:::{.fragment}
+[Poor context → Poor synthesis]{.alert}
+:::
+
+
+## [Live Demo Part 2]
+
+### The Process: Iteration and Control
+
+**Working through synthesis:**
+
+- Dynamic context pooling (tool calls)
+- Editing AI outputs to steer direction
+- Outline → sections → transitions → intro
+- Multiple refinement passes
+
+:::{.fragment}
+**Human guidance at every step**
+:::
+
+
+# Key Principles {background-color="#40666e"}
+
+## What Made This Work
+
+### Transferable Lessons
+
+**1. Context is everything**
+
+- Pre-process papers systematically (Day 2 extraction!)
+- Define audience, purpose, structure upfront
+- Provide style examples
+- Specify constraints (IP, length, tone)
+
+:::{.fragment}
+**This preparation is 50% of the work** - but it's what makes synthesis possible
+:::
+
+## What Made This Work (cont.)
+
+### Transferable Lessons
+
+**2. Work iteratively, not linearly**
+
+- Start with outline refinement
+- Work section by section
+- Refine transitions and flow
+- Write introduction last
+
+---
+
+## What Made This Work (cont.)
+
+### Transferable Lessons
+
+**3. Maintain control**
+
+- Edit AI outputs to guide direction
+- Don't accept everything as-is
+- You're the expert, AI is the assistant
+
+:::{.fragment}
+[Remember:]{.alert} AI scales your effort, doesn't replace your judgment
+:::
+
+## The Role of Evaluation
+
+### Connecting to Day 3
+
+**Throughout the process:**
+
+- Check for failure modes identified in evaluation
+- Ensure consistency across sections
+- Verify IP compliance
+- Maintain quality standards
+
+:::{.fragment}
+[This is why Day 3 matters!]{.alert} Evaluation guides refinement
+:::
+
+# IP Constraints {background-color="#40666e"}
+
+## Why This Matters
+
+### Legal and Ethical Requirements
+
+**When synthesizing from papers:**
+
+- Cannot reproduce copyrighted text verbatim
+- Must paraphrase and transform
+- Proper attribution essential
+- Fair use principles apply
+
+:::{.fragment}
+**For IAEA/FAO work:** Particularly critical for public-facing documents
+:::
+
+## IP-Aware Synthesis
+
+### Key Requirements
+
+From the MARIS system approach:
+
+- **Paraphrase and synthesize** - don't copy
+- **Limit quotations** - max 2-3 sentences, always cited
+- **Transform, don't reproduce** - add analytical value
+- **Always attribute** - cite sources properly
+
+:::{.fragment}
+**These constraints must be in your synthesis prompt**
+:::
+
+## Example IP Specifications
+
+### From Our Workflow
+
+```
+**IP Requirements:**
+- Paraphrase all content, do not reproduce verbatim
+- Maximum one short quote per source (under 20 words)
+- Always provide citations in (Author, Year) format
+- Transform information through synthesis and analysis
+- Respect copyright while providing educational value
+```
+
+:::{.fragment}
+**This becomes part of your context** - guides the AI throughout
+:::
+
+# Tool Considerations {background-color="#40666e"}
+
+## What About Your Tools?
+### Exploring Different Approaches
+
+**SolveIt features shown:**
+
+- Advanced context pooling (tool calls)
+- Granular editing control
+- Persistent conversation with full context
+
+:::{.fragment}
+**But many tools can support this workflow** - each with different strengths
+:::
+
+## Your Available Tools
+
+### Different Strengths for Synthesis
+
+**You all have access to:**
+- **Microsoft Copilot Pro** (integrated in Office)
+
+**Other options you might use:**
+
+- ChatGPT/Claude - Powerful models, iterative work
+- NotebookLM - Synthesis across sources, citations
+- Elicit/SciSpace - Research-specific workflows
+- ... and many more
+
+:::{.fragment}
+**In Session 4B:** Explore what's possible with your preferred tool
+:::
+
+## Adapting the Approach
+
+### What's Possible Without SolveIt?
+
+**Core principles still work:**
+
+- Pre-extract papers (you learned this Day 2!)
+- Prepare context documents
+- Work section by section
+- Iterate and refine
+
+:::{.fragment}
+**Limitations to work around:**
+- Smaller context windows → work in smaller chunks
+- Less control → more careful prompt engineering
+- No tool calls → manually manage context
+:::
+
+## NotebookLM Example
+
+### A Good Alternative
+
+**NotebookLM strengths for this:**
+
+- Upload multiple source documents
+- Good at synthesis across sources
+- Citation tracking
+- Conversational interface
+
+:::{.fragment}
+**Try it in Session 4B** - see what's possible with your tools
+:::
+
+# The Intentional Approach {background-color="#40666e"}
+
+## What We Mean by "Intentional"
+
+### Deliberate, Not Delegated
+
+**Intentional synthesis means:**
+
+1. **You define** the structure and narrative
+2. **You prepare** the context carefully
+3. **You guide** the iteration process
+4. **You evaluate** the outputs critically
+5. **You refine** based on your expertise
+
+:::{.fragment}
+[AI assists, but you drive]{.alert}
+:::
+
+## Why This Matters
+
+### Avoiding the "Magic Button" Trap
+
+**The temptation:**
+
+> "Just give AI all my papers and let it write the review"
+
+:::{.fragment}
+**Why this doesn't work:**
+
+- Quality requires your domain expertise
+- Structure needs your strategic thinking
+:::
+
+
+## Why This Matters (cont.)
+
+### Your Expertise Is Essential
+
+**AI cannot replace:**
+
+- Your analytical judgment for synthesis
+- Your critical eye for evaluation
+- Your understanding of what matters in your field
+
+:::{.fragment}
+[Key principle:]{.alert} AI scales your effort, doesn't replace it
+:::
+
+## The Effort Distribution
+
+### A Hypothesis to Discuss
+
+**Traditional approach:** Heavy on reading/extraction
+
+**AI-assisted approach:** Shifts toward preparation, guidance, and critical evaluation
+
+:::{.fragment}
+**Key questions:**
+
+- Does this actually save time overall?
+- Or does it produce better quality for similar effort?
+- What's the learning curve cost?
+:::
+
+:::{.fragment}
+**Your experience:** What would your distribution look like?
+:::
+
+# Session 4B Preview {background-color="#40666e"}
+
+## Your Turn to Try
+
+### Hands-On Synthesis Practice
+
+**What you'll do:**
+
+- Choose 3-5 papers from your domain
+- Define synthesis task and context
+- Try multi-paper synthesis with your tools
+- Apply IP-aware prompting
+- Iterate and refine
+
+:::{.fragment}
+**Goal:** Experience the intentional approach with your own work
+:::
+
+## What to Prepare
+
+### For Session 4B
+
+**You'll need:**
+
+1. **Papers:** 3-5 from your research area (ideally already extracted)
+2. **Task definition:** What are you synthesizing? For whom?
+3. **Structure:** Rough outline of what you want
+4. **Tool access:** Whatever AI tool you'll use
+
+:::{.fragment}
+**We'll provide:** Templates and guidance for the exercise
+:::
+
+# Questions & Discussion {background-color="#40666e"}
+
+## Before We Break
+
+### Key Takeaways
+
+1. ✅ Synthesis requires intentional, iterative approach
+2. ✅ Context preparation is crucial (50% of work)
+3. ✅ IP constraints must be specified upfront
+4. ✅ Tools vary, but principles transfer
+5. ✅ You drive, AI assists
+
+
+## Next: Hands-On Practice
+
+### Session 4B Coming Up
+
+**Break time, then:**
+
+- Detailed instructions for synthesis exercise
+- Work with your own papers and tools
+- Practice the intentional approach
+- Get support as you work
+
+:::{.fragment}
+[See you in Session 4B!]{.alert}
+:::

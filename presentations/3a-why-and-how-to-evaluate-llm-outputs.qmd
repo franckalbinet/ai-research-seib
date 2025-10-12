@@ -454,7 +454,7 @@ By end of Day 3, you'll be able to:
 2. **Prompt engineering** (build/refine)
 3. **Open coding** (capture observations)
 4. **Axial coding** (identify failure patterns)
-5. **Systematic evaluation** (LLM-as-judge, deterministic checks)
+5. **Systematic evaluation** (LLM-as-judge, code-based & deterministic)
 6. **Prioritize** prominent failure modes
 7. **Refine prompt** → back to step 2
 
